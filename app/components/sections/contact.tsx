@@ -19,14 +19,14 @@ const socials = [
   },
   {
     title: "LinkedIn",
-    subtitle: "Harshit Pandey",
-    href: "https://linkedin.com/in/harshit-pandey-02842b410/",
+    subtitle: "Harshit R. Pandey",
+    href: "https://www.linkedin.com/in/harshit-r-pandey-02842b410/",
     icon: Globe,
   },
   {
     title: "X",
-    subtitle: "@harshittpanday",
-    href: "https://x.com/harshittpanday",
+    subtitle: "@harshittpandayy",
+    href: "https://x.com/harshittpandayy",
     icon: SiX,
   },
 ];
