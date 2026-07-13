@@ -26,7 +26,7 @@ const items = [
     label: "LinkedIn",
     action: () =>
       window.open(
-        "https://linkedin.com/in/harshit-pandey-02842b410/",
+        "https://www.linkedin.com/in/harshit-r-pandey-02842b410/",
         "_blank"
       ),
   },
