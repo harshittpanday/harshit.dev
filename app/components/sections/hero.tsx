@@ -25,10 +25,10 @@ export default function Hero() {
           transition={{ delay: .1, duration: .5 }}
           className="text-5xl font-bold leading-tight md:text-7xl"
         >
-          Building products that
+          Hi, I'm Harshit — A
           <br />
           <span className="text-blue-500">
-            people actually enjoy using.
+            self-driven developer
           </span>
         </motion.h1>
 
@@ -38,7 +38,7 @@ export default function Hero() {
           transition={{ delay: .2, duration: .5 }}
           className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-zinc-400"
         >
-          Hi, I'm Harshit. I'm a student exploring AI, software engineering,
+          I'm Harshit. I'm a student exploring AI, software engineering,
           and product design through real-world projects.
         </motion.p>
 
