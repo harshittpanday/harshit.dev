@@ -11,7 +11,7 @@ export const projects = [
     description:
       "Intent is an AI-powered research platform that gathers information from multiple trusted sources into a single, easy-to-explore interface.",
 
-    image: "/images/intent.png",
+    image: "/images/Intent.png",
 
     live: "https://inten1.vercel.app/",
     github: "https://github.com/harshittpanday/Intent",
