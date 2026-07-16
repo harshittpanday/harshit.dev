@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import BrowserFrame from "@/app/components/ui/browser-frame";
+import ProjectTimeline from "@/app/components/project-timeline";
 
 const fadeUp = {
   hidden: {
@@ -29,9 +30,12 @@ interface Project {
   role: string;
   status: string;
   overview: string;
-  problem: string;
-  solution: string;
   learned: string;
+   timeline: {
+    date: string;
+    title: string;
+    description: string;
+  }[];
 }
 
 export default function ProjectView({
@@ -115,6 +119,8 @@ export default function ProjectView({
         />
       </motion.section>
 
+<ProjectTimeline timeline={project.timeline} />
+
       <section className="mt-24 grid gap-6 lg:grid-cols-2">
         <motion.div
           variants={fadeUp}
@@ -187,8 +193,7 @@ export default function ProjectView({
 
       <section className="mt-24 space-y-8">
         {[
-          ["The Problem", project.problem],
-          ["The Solution", project.solution],
+          
           ["What I Learned", project.learned],
         ].map(([title, text]) => (
           <motion.div

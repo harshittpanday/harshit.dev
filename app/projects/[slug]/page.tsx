@@ -18,4 +18,4 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return <ProjectView project={project} />;
-}
+} 

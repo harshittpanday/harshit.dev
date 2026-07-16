@@ -8,6 +8,7 @@ import Spotlight from "@/app/components/ui/spotlight";
 import ProgressBar from "@/app/components/ui/progress-bar";
 import Footer from "@/app/components/sections/footer";
 import CommandMenu from "@/app/components/ui/command-menu";
+import ProjectTimeline from "@/app/components/project-timeline";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       
       <Navbar />
       
+      
 
 <main className="bg-[#09090B] text-white">
 <Hero />
@@ -28,6 +30,8 @@ export default function Home() {
 <Contact />
 <Footer />
 </main>
+
     </>
+    
   );
 }
