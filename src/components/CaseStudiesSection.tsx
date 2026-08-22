@@ -19,7 +19,10 @@ export const CaseStudiesSection: React.FC = () => {
 
   return (
     <>
-      <section id="case-studies" className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5">
+      <section
+        id="case-studies"
+        className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5"
+      >
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="mb-16">
@@ -32,6 +35,7 @@ export const CaseStudiesSection: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Selected Deep Dives</span>
             </motion.div>
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -41,9 +45,10 @@ export const CaseStudiesSection: React.FC = () => {
             >
               Case Studies
             </motion.h2>
+
             <p className="text-sm sm:text-base text-neutral-400 max-w-2xl font-sans leading-relaxed">
-              End-to-end full-stack architectures, AI systems, and product execution — from research
-              to deployed, high-throughput software.
+              End-to-end full-stack architectures, AI systems, and product
+              execution — from research to deployed, high-throughput software.
             </p>
           </div>
 
@@ -63,16 +68,17 @@ export const CaseStudiesSection: React.FC = () => {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
-                    background: `radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(167, 139, 250, 0.06), transparent 70%)`,
+                    background:
+                      "radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(167, 139, 250, 0.06), transparent 70%)",
                   }}
                 />
 
                 {/* Left Column: Project Info */}
                 <div className="flex flex-col gap-2 md:max-w-2xl">
                   <div className="flex items-center gap-3 text-xs font-mono text-neutral-400">
-                    <span className="text-brand-purple font-semibold">{study.role}</span>
-                    <span>·</span>
-                    <span>{study.duration}</span>
+                    <span className="text-brand-purple font-semibold">
+                      {study.role}
+                    </span>
                     <span>·</span>
                     <span>{study.year}</span>
                   </div>
@@ -87,13 +93,13 @@ export const CaseStudiesSection: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Right Column: Highlight Metric & CTA */}
+                {/* Right Column: Highlight */}
                 <div className="flex flex-row md:flex-col items-baseline md:items-end justify-between md:justify-center gap-1 border-t md:border-t-0 border-white/5 pt-4 md:pt-0">
-                  <span className="text-4xl sm:text-5xl font-display font-extrabold text-brand-purple tracking-tight">
-                    {study.impactMetric}
+                  <span className="text-lg sm:text-xl font-display font-bold text-brand-purple tracking-tight text-right">
+                    {study.highlightTag}
                   </span>
                   <span className="text-xs font-mono text-neutral-400 text-right">
-                    {study.impactLabel}
+                    Selected project
                   </span>
                 </div>
               </motion.div>
@@ -105,12 +111,16 @@ export const CaseStudiesSection: React.FC = () => {
             <button
               onClick={() => {
                 playClickSound();
-                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                document
+                  .querySelector("#projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
               className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-neutral-900 border border-white/15 hover:border-brand-purple/50 text-sm font-mono text-white transition-all group shadow-lg"
             >
               <span>Explore All Projects</span>
-              <span className="text-brand-purple group-hover:translate-x-1 transition-transform">→</span>
+              <span className="text-brand-purple group-hover:translate-x-1 transition-transform">
+                →
+              </span>
             </button>
           </div>
         </div>

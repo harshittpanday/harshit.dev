@@ -130,9 +130,7 @@ export const TechStackSection: React.FC = () => {
                 <div className="flex flex-col text-left">
                   <span className="text-sm font-display font-semibold text-white">
                     {tech.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-neutral-500">
-                    {tech.level}
+
                   </span>
                 </div>
               </div>
@@ -158,9 +156,7 @@ export const TechStackSection: React.FC = () => {
                 <div className="flex flex-col text-left">
                   <span className="text-sm font-display font-semibold text-white">
                     {tech.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-neutral-500">
-                    {tech.level}
+
                   </span>
                 </div>
               </div>
@@ -184,11 +180,10 @@ export const TechStackSection: React.FC = () => {
                     playClickSound();
                     setActiveCategory(cat);
                   }}
-                  className={`px-3 py-1 rounded-lg text-xs font-mono transition-colors ${
-                    activeCategory === cat
-                      ? "bg-brand-purple text-neutral-950 font-bold"
-                      : "text-neutral-400 hover:text-white bg-white/5"
-                  }`}
+                  className={`px-3 py-1 rounded-lg text-xs font-mono transition-colors ${activeCategory === cat
+                    ? "bg-brand-purple text-neutral-950 font-bold"
+                    : "text-neutral-400 hover:text-white bg-white/5"
+                    }`}
                 >
                   {cat}
                 </button>
