@@ -18,14 +18,20 @@ import { playClickSound, playSuccessSound } from "@/lib/sound";
 
 export const ContactSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
-  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const copyEmail = () => {
     navigator.clipboard.writeText(siteConfig.email);
     setCopied(true);
     playSuccessSound();
+
     try {
       confetti({
         particleCount: 35,
@@ -35,19 +41,39 @@ export const ContactSection: React.FC = () => {
     } catch {
       // Confetti fallback
     }
+
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formState.name || !formState.email || !formState.message) return;
+
+    if (!formState.name || !formState.email || !formState.message) {
+      return;
+    }
+
     setIsSubmitting(true);
+    setError("");
     playClickSound();
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
       setIsSubmitted(true);
       playSuccessSound();
+
       try {
         confetti({
           particleCount: 70,
@@ -57,14 +83,25 @@ export const ContactSection: React.FC = () => {
       } catch {
         // Confetti fallback
       }
-    }, 900);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5">
+    <section
+      id="contact"
+      className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Reach Out Info */}
+          {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
               <motion.div
@@ -84,7 +121,8 @@ export const ContactSection: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-6xl font-display font-bold text-white tracking-tight mb-6"
               >
-                Let&apos;s build something <span className="text-brand-purple">remarkable</span>.
+                Let&apos;s build something{" "}
+                <span className="text-brand-purple">remarkable</span>.
               </motion.h2>
 
               <motion.p
@@ -94,19 +132,22 @@ export const ContactSection: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-base sm:text-lg text-neutral-400 font-sans leading-relaxed mb-8 max-w-md"
               >
-                Whether you have an ambitious product idea, want to architect an AI-native system,
-                or just want to chat about tech—my inbox is always open.
+                Whether you have an ambitious product idea, want to architect
+                an AI-native system, or just want to chat about tech—my inbox
+                is always open.
               </motion.p>
 
-              {/* Direct Copy Email Box */}
+              {/* Email */}
               <div className="p-6 rounded-3xl bg-[#0e0e14] border border-white/10 mb-8 max-w-md">
                 <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider block mb-2">
                   Direct Email
                 </span>
+
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-mono text-sm sm:text-base text-white font-medium truncate">
                     {siteConfig.email}
                   </span>
+
                   <button
                     onClick={copyEmail}
                     className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-brand-purple hover:text-neutral-950 text-xs font-mono text-white transition-all shrink-0"
@@ -127,9 +168,12 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Social Connect Row */}
+            {/* Socials */}
             <div className="flex flex-wrap items-center gap-3">
-              <span className="text-xs font-mono text-neutral-500 mr-2">Socials:</span>
+              <span className="text-xs font-mono text-neutral-500 mr-2">
+                Socials:
+              </span>
+
               <a
                 href={siteConfig.socials.github}
                 target="_blank"
@@ -140,6 +184,7 @@ export const ContactSection: React.FC = () => {
                 <Github className="w-3.5 h-3.5" />
                 <span>GitHub</span>
               </a>
+
               <a
                 href={siteConfig.socials.linkedin}
                 target="_blank"
@@ -150,6 +195,7 @@ export const ContactSection: React.FC = () => {
                 <Linkedin className="w-3.5 h-3.5 text-brand-cyan" />
                 <span>LinkedIn</span>
               </a>
+
               <a
                 href={siteConfig.socials.twitter}
                 target="_blank"
@@ -163,7 +209,7 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Contact Form */}
+          {/* Right Column */}
           <div className="lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -177,16 +223,24 @@ export const ContactSection: React.FC = () => {
                   <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
                     <Check className="w-8 h-8" />
                   </div>
+
                   <h3 className="text-2xl font-display font-bold text-white mb-2">
                     Message Sent Successfully!
                   </h3>
+
                   <p className="text-sm text-neutral-400 font-sans max-w-xs mb-6">
-                    Thank you for reaching out. I will get back to you shortly.
+                    Thanks for reaching out. I&apos;ll get back to you shortly.
                   </p>
+
                   <button
                     onClick={() => {
                       setIsSubmitted(false);
-                      setFormState({ name: "", email: "", message: "" });
+                      setFormState({
+                        name: "",
+                        email: "",
+                        message: "",
+                      });
+                      setError("");
                     }}
                     className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-mono text-white transition-colors"
                   >
@@ -199,13 +253,17 @@ export const ContactSection: React.FC = () => {
                     <label className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
                       Your Name
                     </label>
+
                     <input
                       type="text"
                       required
-                      placeholder="Jane Doe"
+                      placeholder="name"
                       value={formState.name}
                       onChange={(e) =>
-                        setFormState({ ...formState, name: e.target.value })
+                        setFormState({
+                          ...formState,
+                          name: e.target.value,
+                        })
                       }
                       className="w-full px-4 py-3 rounded-xl bg-neutral-900/90 border border-white/10 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-brand-purple/60 transition-colors font-sans"
                     />
@@ -215,13 +273,17 @@ export const ContactSection: React.FC = () => {
                     <label className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
                       Your Email
                     </label>
+
                     <input
                       type="email"
                       required
-                      placeholder="jane@company.com"
+                      placeholder="xyz@example.com"
                       value={formState.email}
                       onChange={(e) =>
-                        setFormState({ ...formState, email: e.target.value })
+                        setFormState({
+                          ...formState,
+                          email: e.target.value,
+                        })
                       }
                       className="w-full px-4 py-3 rounded-xl bg-neutral-900/90 border border-white/10 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-brand-purple/60 transition-colors font-sans"
                     />
@@ -231,17 +293,27 @@ export const ContactSection: React.FC = () => {
                     <label className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
                       Project or Message
                     </label>
+
                     <textarea
                       required
                       rows={4}
                       placeholder="Tell me about your project, timeline, or vision..."
                       value={formState.message}
                       onChange={(e) =>
-                        setFormState({ ...formState, message: e.target.value })
+                        setFormState({
+                          ...formState,
+                          message: e.target.value,
+                        })
                       }
                       className="w-full px-4 py-3 rounded-xl bg-neutral-900/90 border border-white/10 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-brand-purple/60 transition-colors font-sans resize-none"
                     />
                   </div>
+
+                  {error && (
+                    <p className="text-sm text-red-400 font-sans">
+                      {error}
+                    </p>
+                  )}
 
                   <button
                     type="submit"
