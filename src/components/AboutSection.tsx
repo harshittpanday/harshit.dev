@@ -142,7 +142,7 @@ export const AboutSection: React.FC = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2 text-xs font-mono text-neutral-400">
                   <MapPin className="w-4 h-4 text-brand-cyan" />
-                  <span>Bangalore, India</span>
+                  <span>Lucknow, India</span>
                 </div>
                 <span className="flex h-2.5 w-2.5 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
