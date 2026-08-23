@@ -78,9 +78,9 @@ export const disciplinesData: Discipline[] = [
     id: "product-building",
     number: "03",
     title: "Product Building",
-    tagline: "From an idea to working software",
+    tagline: "Taking a project from sketch to usable",
     description:
-      "Turning an idea into a usable project, then improving it through feedback and testing.",
+      "Starting with a rough version, then improving it through feedback and testing.",
     icon: "Sparkles",
     accentColor: "#FEF08A",
     tags: ["0→1 Building", "shadcn/ui", "Framer Motion", "UI Design", "Iteration"],
@@ -161,23 +161,23 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: "codey",
     title: "CodeY",
-    subtitle: "Local-First AI Development Companion",
+    subtitle: "Local codebase search and project memory",
     role: "Creator / Builder",
     year: "2026",
-    highlightTag: "Local Project Memory & Context",
+    highlightTag: "Local project context",
     tags: ["Python", "SQLite", "Ollama", "GitPython", "ChromaDB", "Watchdog", "Typer", "Rich"],
     description:
-      "CodeY helps developers understand their codebases by indexing project files, code structure, and Git history into local project memory, then retrieving relevant context when needed.",
+      "CodeY helps developers understand unfamiliar codebases. It indexes project files, code structure, and Git history locally, then retrieves relevant context for a question.",
     overview:
-      "CodeY indexes your repository locally into a vector store and SQLite metadata layer. By tracking Git history and file changes in real-time, it allows developers to query and understand architectural decisions, code flow, and historical context without sending sensitive code to external clouds.",
+      "CodeY stores repository embeddings in ChromaDB and metadata in SQLite. It tracks Git history and file changes so developers can ask about code flow, past decisions, and project context without sending the repository to a cloud service.",
     clarification:
-      "CodeY is a codebase understanding and context retrieval companion. It does not directly rewrite or edit your source code.",
+      "CodeY answers questions about a codebase. It does not rewrite or edit source files.",
     features: [
-      "Local vector embeddings & semantic search with ChromaDB",
-      "Git history indexing & commit context retrieval with GitPython",
-      "Live filesystem change tracking with Watchdog",
-      "Local offline LLM inference powered by Ollama",
-      "Interactive Terminal UI built using Typer and Rich formatting",
+      "Local embeddings and semantic search with ChromaDB",
+      "Git history indexing and commit retrieval with GitPython",
+      "Filesystem change tracking with Watchdog",
+      "Offline model inference with Ollama",
+      "Terminal interface built with Typer and Rich",
     ],
     stack: [
       "Python",
@@ -195,20 +195,20 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: "intent",
     title: "Intent",
-    subtitle: "AI-Powered Research & Multi-Source Discovery",
+    subtitle: "Research across sources in one place",
     role: "Creator / Builder",
     year: "2026",
-    highlightTag: "Multi-Platform Knowledge Aggregation",
+    highlightTag: "Multi-source research",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Neon", "AI APIs"],
     description:
-      "Intent aggregates information from Reddit, X, YouTube, official documentation, and the wider web, then uses AI to help users discover, summarize, and contextualize relevant information.",
+      "Intent gathers results from Reddit, X, YouTube, official documentation, and the wider web, then summarizes the material around a research question.",
     overview:
-      "Instead of manually searching across multiple search engines and forums, Intent pulls discussions, video transcripts, and technical documentation into a unified feed, applying AI summarization to extract clear insights and answers.",
+      "Intent helps with research across different sources without jumping between a bunch of tabs. It collects discussions, video transcripts, and documentation in one feed, then uses AI to summarize the useful parts.",
     features: [
-      "Multi-source information aggregation across community platforms & docs",
-      "AI-assisted synthesis, topic summarization, and key takeaway extraction",
-      "Organized research workspaces and saved search collections",
-      "Modern dark-mode interface built with Next.js and Tailwind CSS",
+      "Results from community platforms, videos, the web, and documentation",
+      "AI summaries and key-point extraction",
+      "Research workspaces and saved search collections",
+      "Interface built with Next.js and Tailwind CSS",
     ],
     stack: [
       "Next.js",
@@ -224,20 +224,20 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: "threadly",
     title: "ThreadLy",
-    subtitle: "Social & Conversation-Focused Web Platform",
+    subtitle: "A web app for posts and discussions",
     role: "Creator / Builder",
     year: "2026",
-    highlightTag: "Community Conversations & Posts",
+    highlightTag: "Threads, replies, and media",
     tags: ["Next.js", "TypeScript", "Clerk", "Firebase", "Cloudinary", "Tailwind CSS"],
     description:
-      "A social web application designed for active discussions, post sharing, dynamic media uploads, and community interactions.",
+      "ThreadLy is a social web app for creating posts, joining discussions, sharing media, and replying in threads.",
     overview:
-      "ThreadLy provides an intuitive space for users to create discussion threads, interact with community posts, upload media, and manage user profiles seamlessly.",
+      "ThreadLy combines discussion threads, replies, media uploads, and user profiles. Clerk handles authentication, Firebase stores post data, and Cloudinary handles images.",
     features: [
       "User authentication and profile management via Clerk",
       "Real-time database integration with Firebase",
       "Cloud image storage and optimization with Cloudinary",
-      "Responsive post feeds, nested replies, and clean UI components",
+      "Responsive post feeds and nested replies",
     ],
     stack: [
       "Next.js",
@@ -260,9 +260,9 @@ export const projectsData: Project[] = [
     year: "2026",
     role: "Creator / Builder",
     description:
-      "Local-first AI development companion that indexes project structure and Git history into local memory.",
+      "A local tool for understanding unfamiliar codebases. It indexes code structure and Git history, then retrieves context for questions.",
     longDescription:
-      "CodeY indexes codebases into local vector stores and SQLite to help developers quickly understand architecture, dependencies, and project history without cloud dependency.",
+      "CodeY stores repository embeddings in ChromaDB and metadata in SQLite. It tracks files and Git history locally so developers can ask about code flow, dependencies, and past changes.",
     highlights: [
       "Local offline LLM integration via Ollama",
       "ChromaDB semantic search over repository files",
@@ -281,12 +281,12 @@ export const projectsData: Project[] = [
     year: "2026",
     role: "Creator / Builder",
     description:
-      "AI-driven multi-source research tool aggregating insights from Reddit, X, YouTube, and web docs.",
+      "A research tool that gathers material from Reddit, X, YouTube, documentation, and the web in one place.",
     longDescription:
-      "Intent simplifies research by aggregating relevant community discussions, videos, and documentation into unified, AI-summarized insights.",
+      "Intent collects discussions, video transcripts, and documentation around a question, then uses AI to summarize the relevant material.",
     highlights: [
       "Multi-source information aggregation pipeline",
-      "AI summarization and contextual distillation",
+      "AI summaries and key-point extraction",
       "PostgreSQL and Neon database storage",
       "Responsive UI built with Next.js and Tailwind CSS",
     ],
@@ -302,9 +302,9 @@ export const projectsData: Project[] = [
     year: "2026",
     role: "Creator / Builder",
     description:
-      "Social web application focused on community discussions, media sharing, and conversation threads.",
+      "A social web app for posts, threaded discussions, media sharing, and user profiles.",
     longDescription:
-      "A complete social platform featuring user authentication, threaded replies, image uploads, and real-time updates.",
+      "ThreadLy uses Clerk for authentication, Firebase for post data, and Cloudinary for image uploads. Posts support threaded replies and live updates.",
     highlights: [
       "Clerk user authentication and profile management",
       "Firebase database synchronization for posts",
@@ -323,9 +323,9 @@ export const projectsData: Project[] = [
     year: "2025",
     role: "Creator / Builder",
     description:
-      "Personalized assistant exploration with persistent context, document indexing, and conversational memory.",
+      "An experiment with a local assistant that remembers context and answers questions about indexed documents.",
     longDescription:
-      "An experimental local assistant project exploring semantic memory storage, document querying, and custom prompt routing.",
+      "This project tests semantic memory, document retrieval, and custom prompt routing with a local model.",
     highlights: [
       "Semantic indexing over notes and documents",
       "Conversational memory with local storage",
@@ -343,9 +343,9 @@ export const projectsData: Project[] = [
     year: "2025",
     role: "Creator / Builder",
     description:
-      "Structured learning workspace designed to organize study materials, concepts, and revision schedules.",
+      "A workspace for organizing study material, concepts, sessions, and revision schedules.",
     longDescription:
-      "A web tool tailored for students to manage complex subject notes, track study sessions, and structure conceptual learning.",
+      "Study System groups notes by subject and topic, tracks study sessions, and keeps revision plans in one place.",
     highlights: [
       "Subject taxonomy and hierarchical topic breakdown",
       "Clean, distraction-free markdown interface",
@@ -363,12 +363,12 @@ export const projectsData: Project[] = [
     year: "2025",
     role: "Web Developer",
     description:
-      "Modern responsive web application featuring custom layouts, interactive sections, and clean typography.",
+      "A responsive client website with custom layouts, interactive sections, and motion.",
     longDescription:
-      "Client web build crafted with Next.js and Tailwind CSS, focusing on visual clarity, responsive performance, and modern web standards.",
+      "A client website built with Next.js and Tailwind CSS, with responsive layouts and Framer Motion interactions.",
     highlights: [
-      "Fully responsive mobile-to-desktop design",
-      "Optimized web performance and image assets",
+      "Responsive mobile-to-desktop layouts",
+      "Optimized image assets",
       "Interactive components with Framer Motion",
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -382,44 +382,44 @@ export const techStackCategories = [
   {
     category: "Languages",
     items: [
-      { name: "Python", icon: "Terminal", color: "#3776AB" },
-      { name: "TypeScript", icon: "Code2", color: "#3178C6" },
-      { name: "JavaScript", icon: "FileCode", color: "#F7DF1E" },
-      { name: "HTML", icon: "Layout", color: "#E34F26" },
-      { name: "CSS", icon: "Palette", color: "#264DE4" },
+      { name: "Python", icon: "Terminal", color: "#22D3EE" },
+      { name: "TypeScript", icon: "Code2", color: "#22D3EE" },
+      { name: "JavaScript", icon: "FileCode", color: "#22D3EE" },
+      { name: "HTML", icon: "Layout", color: "#22D3EE" },
+      { name: "CSS", icon: "Palette", color: "#22D3EE" },
     ],
   },
   {
     category: "Frontend & UI",
     items: [
-      { name: "Next.js", icon: "Boxes", color: "#FFFFFF" },
-      { name: "React", icon: "Atom", color: "#61DAFB" },
-      { name: "Tailwind CSS", icon: "Palette", color: "#38BDF8" },
-      { name: "Framer Motion", icon: "Sparkles", color: "#F43F5E" },
-      { name: "shadcn/ui", icon: "Layers", color: "#A78BFA" },
+      { name: "Next.js", icon: "Boxes", color: "#22D3EE" },
+      { name: "React", icon: "Atom", color: "#22D3EE" },
+      { name: "Tailwind CSS", icon: "Palette", color: "#22D3EE" },
+      { name: "Framer Motion", icon: "Sparkles", color: "#22D3EE" },
+      { name: "shadcn/ui", icon: "Layers", color: "#22D3EE" },
     ],
   },
   {
     category: "Backend & Databases",
     items: [
-      { name: "Node.js", icon: "Server", color: "#68A063" },
-      { name: "PostgreSQL", icon: "Database", color: "#336791" },
-      { name: "Neon", icon: "Database", color: "#00E599" },
-      { name: "Prisma", icon: "Layers", color: "#5A67D8" },
-      { name: "Firebase", icon: "Zap", color: "#FFA611" },
-      { name: "SQLite", icon: "Database", color: "#003B57" },
+      { name: "Node.js", icon: "Server", color: "#22D3EE" },
+      { name: "PostgreSQL", icon: "Database", color: "#22D3EE" },
+      { name: "Neon", icon: "Database", color: "#22D3EE" },
+      { name: "Prisma", icon: "Layers", color: "#22D3EE" },
+      { name: "Firebase", icon: "Zap", color: "#22D3EE" },
+      { name: "SQLite", icon: "Database", color: "#22D3EE" },
     ],
   },
   {
     category: "AI & Tooling",
     items: [
-      { name: "Ollama", icon: "Bot", color: "#FFFFFF" },
-      { name: "LangChain", icon: "GitFork", color: "#4ADE80" },
-      { name: "RAG Systems", icon: "Search", color: "#FEF08A" },
-      { name: "Git", icon: "GitBranch", color: "#F05032" },
-      { name: "GitHub", icon: "Code2", color: "#FFFFFF" },
-      { name: "Docker", icon: "Container", color: "#2496ED" },
-      { name: "Vercel", icon: "Cloud", color: "#FFFFFF" },
+      { name: "Ollama", icon: "Bot", color: "#A78BFA" },
+      { name: "LangChain", icon: "GitFork", color: "#A78BFA" },
+      { name: "RAG Systems", icon: "Search", color: "#A78BFA" },
+      { name: "Git", icon: "GitBranch", color: "#22D3EE" },
+      { name: "GitHub", icon: "Code2", color: "#22D3EE" },
+      { name: "Docker", icon: "Container", color: "#22D3EE" },
+      { name: "Vercel", icon: "Cloud", color: "#22D3EE" },
     ],
   },
 ];

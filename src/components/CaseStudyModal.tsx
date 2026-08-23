@@ -102,7 +102,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-200 text-xs sm:text-sm font-sans flex items-start gap-3 mb-6">
                 <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold block text-amber-300 mb-0.5">Core Design Clarification:</span>
+                  <span className="font-semibold block text-amber-300 mb-0.5">What it does not do:</span>
                   <span>{study.clarification}</span>
                 </div>
               </div>
@@ -111,8 +111,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             {/* Key Technical Features */}
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3 mb-8">
               <h3 className="text-sm font-mono text-neutral-300 uppercase tracking-wider flex items-center gap-2 mb-4">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Key Technical Architecture &amp; Features
+                <CheckCircle2 className="w-4 h-4 text-brand-cyan" />
+                How it works
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {study.features.map((feature, idx) => (

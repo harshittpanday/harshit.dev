@@ -143,7 +143,7 @@ export const StatementSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="pt-4"
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-emerald-400 tracking-tight flex items-center gap-3">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-brand-yellow-warm tracking-tight flex items-center gap-3">
             <span>Projects are where I learn.</span>
           </h3>
         </motion.div>

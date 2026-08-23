@@ -18,7 +18,7 @@ export const BackgroundCanvas: React.FC = () => {
     let height = (canvas.height = window.innerHeight);
 
     // Particle nodes
-    const particleCount = Math.min(45, Math.floor(width / 35));
+    const particleCount = Math.min(30, Math.floor(width / 50));
     const particles: Array<{
       x: number;
       y: number;
@@ -33,7 +33,6 @@ export const BackgroundCanvas: React.FC = () => {
       "rgba(167, 139, 250, ", // purple
       "rgba(254, 240, 138, ", // warm yellow
       "rgba(34, 211, 238, ",  // cyan
-      "rgba(74, 222, 128, ",  // green
     ];
 
     for (let i = 0; i < particleCount; i++) {
@@ -44,7 +43,7 @@ export const BackgroundCanvas: React.FC = () => {
         vy: (Math.random() - 0.5) * 0.25,
         radius: Math.random() * 1.5 + 0.8,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: Math.random() * 0.4 + 0.1,
+        alpha: Math.random() * 0.25 + 0.06,
       });
     }
 
@@ -86,7 +85,7 @@ export const BackgroundCanvas: React.FC = () => {
         let extraAlpha = 0;
         if (distanceSquared < 14400) {
           const dist = Math.sqrt(distanceSquared);
-          extraAlpha = (1 - dist / 120) * 0.4;
+          extraAlpha = (1 - dist / 120) * 0.24;
         }
 
         ctx.beginPath();
@@ -137,12 +136,12 @@ export const BackgroundCanvas: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Soft Ambient Radial Lights */}
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] bg-amber-900/08 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute -top-48 left-[12%] w-[520px] h-[520px] bg-white/[0.018] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-48 w-[440px] h-[440px] bg-cyan-900/[0.035] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 left-[18%] w-[520px] h-[520px] bg-amber-900/[0.025] rounded-full blur-[180px] pointer-events-none" />
       
       {/* Background Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-40" />
       
       {/* Subtle Grid Backdrop */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 mask-radial" />

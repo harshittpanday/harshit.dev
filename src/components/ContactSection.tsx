@@ -108,7 +108,7 @@ export const ContactSection: React.FC = () => {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-2 text-xs font-mono text-emerald-400 uppercase tracking-widest mb-3"
+                className="flex items-center gap-2 text-xs font-mono text-brand-yellow-warm uppercase tracking-widest mb-3"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Get in Touch</span>
@@ -294,7 +294,7 @@ export const ContactSection: React.FC = () => {
                     <textarea
                       required
                       rows={4}
-                      placeholder="Tell me about your project, timeline, or vision..."
+                      placeholder="Tell me what you&apos;re working on or what you want to ask..."
                       value={formState.message}
                       onChange={(e) =>
                         setFormState({

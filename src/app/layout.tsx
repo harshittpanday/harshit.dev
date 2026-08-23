@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#08080a",
+  themeColor: "#08090b",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -30,6 +30,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: "/icon.png",
+  },
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
@@ -86,7 +89,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} dark`}
     >
-      <body className="bg-[#08080a] text-slate-100 antialiased selection:bg-purple-500/30 selection:text-purple-200">
+      <body className="bg-[#08090b] text-slate-100 antialiased selection:bg-purple-500/30 selection:text-purple-200">
         {children}
       </body>
     </html>

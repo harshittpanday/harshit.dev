@@ -27,11 +27,11 @@ export default function Home() {
   }, []);
 
   if (!hasMounted) {
-    return <div className="min-h-screen bg-[#08080a]" />;
+    return <div className="min-h-screen bg-[#08090b]" />;
   }
 
   return (
-    <main className="min-h-screen bg-[#08080a] text-slate-100 relative selection:bg-purple-500/30 selection:text-purple-200">
+    <main className="min-h-screen bg-[#08090b] text-slate-100 relative selection:bg-purple-500/30 selection:text-purple-200">
       {/* Intro Preloader Sequence */}
       <AnimatePresence mode="wait">
         {!introFinished && (

@@ -61,7 +61,7 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-4xl font-display font-bold text-brand-yellow-warm tracking-tight mt-2"
           >
-            Student, Developer &amp; Creator
+            I learn by making things.
           </motion.p>
         </div>
 
@@ -82,21 +82,17 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <h3 className="text-xl sm:text-2xl font-display font-semibold text-white leading-snug">
-                I’m a student in Lucknow who enjoys making{" "}
-                <span className="text-brand-purple">AI tools</span>,{" "}
-                <span className="text-brand-cyan">developer tools</span>, and{" "}
-                <span className="text-brand-yellow-warm">web products</span>.
+                Most of what I know started with a project I wanted to use myself.
               </h3>
 
               <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed">
-                I learn by taking ideas from a rough prototype to working software. That means
-                writing the interface, backend, data layer, and the small interactions that make a
-                product pleasant to use.
+                I usually start with a rough prototype, then work through the interface, backend,
+                data layer, and the small interactions until the whole thing feels usable.
               </p>
 
               <p className="text-sm sm:text-base text-neutral-400 font-sans leading-relaxed">
-                I’m most interested in practical projects that help people research, understand
-                code, or work more clearly. The projects on this site show that work in detail.
+                Right now I’m most curious about local software, codebase search, and ways to make
+                online research less scattered.
               </p>
             </div>
 
@@ -105,16 +101,16 @@ export const AboutSection: React.FC = () => {
               <div className="flex flex-col">
                 <span className="font-mono text-xs text-neutral-500">// Principle 01</span>
                 <span className="text-sm font-semibold text-neutral-200 mt-1">
-                  Speed &amp; Craft
+                  Keep It Quick
                 </span>
-                <span className="text-xs text-neutral-400">Zero sluggishness</span>
+                <span className="text-xs text-neutral-400">Respect the wait</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-mono text-xs text-neutral-500">// Principle 02</span>
                 <span className="text-sm font-semibold text-neutral-200 mt-1">
-                  Pragmatic Tech
+                  Use What Fits
                 </span>
-                <span className="text-xs text-neutral-400">Tested primitives</span>
+                <span className="text-xs text-neutral-400">Tools serve the idea</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-mono text-xs text-neutral-500">// Principle 03</span>
@@ -173,13 +169,13 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
-                Exploring local AI tools, codebase search, and practical web products through
-                independent projects.
+                Testing local models, codebase search, and better ways to gather research from
+                different sources.
               </p>
 
               <div className="flex items-center gap-2 mt-4 pt-3 border-t border-white/5 text-xs font-mono text-neutral-400">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>Building independent projects</span>
+                <Zap className="w-3.5 h-3.5 text-brand-yellow-warm" />
+                <span>Learning in public, one project at a time</span>
               </div>
             </motion.div>
 

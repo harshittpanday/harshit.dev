@@ -52,7 +52,7 @@ export const ProjectsSection: React.FC = () => {
                 My Projects
               </motion.h2>
               <p className="text-sm sm:text-base text-neutral-400 font-sans">
-                AI tools, developer tools, and web products I&apos;ve built.
+                Things I&apos;ve made, how they work, and what I used to build them.
               </p>
             </div>
 

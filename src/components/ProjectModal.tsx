@@ -97,11 +97,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             {/* Key Highlights */}
             <div className="space-y-2 mb-8 bg-neutral-900/60 p-5 rounded-2xl border border-white/5">
               <h3 className="text-xs font-mono text-neutral-400 uppercase tracking-wider mb-3">
-                Key Technical Highlights
+                How it works
               </h3>
               {project.highlights.map((highlight, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-300">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
                   <span>{highlight}</span>
                 </div>
               ))}

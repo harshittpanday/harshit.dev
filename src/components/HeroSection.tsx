@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MousePointer2, ArrowDown, FileText } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -61,8 +62,17 @@ export const HeroSection: React.FC = () => {
           variants={itemVariants}
           className="flex items-center gap-3 mb-6 sm:mb-8"
         >
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-neutral-900 border border-white/15 p-1 flex items-center justify-center shadow-lg shadow-black/50">
-            <span className="text-xl sm:text-2xl font-mono font-bold text-brand-purple">HP</span>
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-neutral-900 border border-white/15 p-1 flex items-center justify-center shadow-lg shadow-black/50 overflow-hidden">
+            <div className="relative w-full h-full rounded-full overflow-hidden">
+              <Image
+                src="/images/pfp.png"
+                alt="Harshit Pandey"
+                fill
+                sizes="(min-width: 640px) 48px, 40px"
+                className="rounded-full object-contain"
+                priority
+              />
+            </div>
           </div>
           <div className="px-4 py-2 rounded-full glass-nav text-xs sm:text-sm font-mono text-neutral-300 border border-white/10 flex items-center gap-2">
             <span>Hello, I&apos;m {siteConfig.name}</span>
@@ -93,7 +103,7 @@ export const HeroSection: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Editorial Stacked Heading: STUDENT · BUILDER · ENGINEER · CREATOR */}
+          {/* Editorial Stacked Heading: STUDENT · BUILDER & · AI ENGINEER */}
           <div className="flex flex-col items-center justify-center font-display font-extrabold tracking-tight uppercase leading-[0.88]">
             <motion.div variants={itemVariants} className="relative">
               <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300">
@@ -102,20 +112,15 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-slate-100 hover:scale-[1.01] transition-transform duration-300">
-                BUILDER
+              <h1 className="text-[clamp(3.1rem,13vw,10rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300 whitespace-nowrap">
+                BUILDER &amp;
               </h1>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-brand-cyan">
-                ENGINEER
-              </h1>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <h1 className="text-[clamp(3rem,12.5vw,9.75rem)] text-brand-yellow-warm whitespace-nowrap">
-                &amp; CREATOR
+            <motion.div variants={itemVariants} className="relative">
+              <h1 className="text-[clamp(2.8rem,11.7vw,9rem)] whitespace-nowrap hover:scale-[1.01] transition-transform duration-300">
+                <span className="text-brand-purple">AI</span>{" "}
+                <span className="text-brand-cyan">ENGINEER</span>
               </h1>
             </motion.div>
           </div>
@@ -125,7 +130,7 @@ export const HeroSection: React.FC = () => {
             <motion.div variants={itemVariants}>
               <p className="text-neutral-600 uppercase tracking-wider">// Focus</p>
               <p className="text-neutral-400 font-medium uppercase">
-                Turning ideas into real software
+                Building things I want to exist
               </p>
             </motion.div>
           </div>
@@ -145,7 +150,7 @@ export const HeroSection: React.FC = () => {
             <div className="max-w-44 text-left">
               <p className="text-neutral-600 uppercase tracking-wider">// Focus</p>
               <p className="text-neutral-400 font-medium uppercase">
-                Turning ideas into real software
+                Building things I want to exist
               </p>
             </div>
             <div className="max-w-40 text-right justify-self-end">

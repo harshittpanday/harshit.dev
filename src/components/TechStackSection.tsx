@@ -105,8 +105,8 @@ export const TechStackSection: React.FC = () => {
       {/* Infinite Dual-Direction Marquee */}
       <div className="flex flex-col gap-6 relative">
         {/* Left-Right Gradient Fade Overlays */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#08080a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#08080a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#08090b] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#08090b] to-transparent z-10 pointer-events-none" />
 
         {/* Row 1: Leftward Marquee */}
         <div className="flex overflow-hidden whitespace-nowrap group">

@@ -36,10 +36,10 @@ export const Footer: React.FC = () => {
             <div className="md:col-span-4 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-snug">
-                  Student. Developer. <span className="text-brand-yellow-warm">Creator.</span>
+                  Still learning. <span className="text-brand-yellow-warm">Always making.</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-400 font-sans mt-3">
-                  Building AI tools, developer tools, and web products.
+                  A personal corner for experiments, projects, and notes from the process.
                 </p>
               </div>
 
@@ -123,7 +123,7 @@ export const Footer: React.FC = () => {
                   <span className="font-bold">Contact Me</span>
                   <span className="text-[10px] text-neutral-400">Say Hello!</span>
                 </div>
-                <div className="w-7 h-7 rounded-full bg-emerald-400/20 text-emerald-400 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                <div className="w-7 h-7 rounded-full bg-brand-purple/20 text-brand-purple flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </button>
