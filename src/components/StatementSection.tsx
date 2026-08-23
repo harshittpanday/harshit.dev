@@ -117,24 +117,20 @@ export const StatementSection: React.FC = () => {
               transition={{ duration: 0.7 }}
               className="text-2xl sm:text-4xl md:text-5xl font-display font-medium text-slate-100 leading-snug tracking-tight"
             >
-              I’m a <span className="text-brand-purple font-semibold">student and builder</span> who
-              likes turning ideas into <span className="text-brand-yellow-warm font-semibold">real software</span>.
-              I build AI-powered tools, developer utilities, and web products, and I enjoy experimenting with new ways to make software more{" "}
-              <span className="text-brand-cyan underline decoration-brand-cyan/40 underline-offset-8">
-                useful and intuitive
-              </span>
-              .
+              I’m a <span className="text-brand-yellow-warm font-semibold">student and developer</span>{" "}
+              building <span className="text-brand-purple font-semibold">AI tools</span>, developer
+              tools, and <span className="text-brand-cyan underline decoration-brand-cyan/40 underline-offset-8">web products</span>.
             </motion.h2>
           </div>
 
           <div className="lg:col-span-4 flex flex-col gap-4">
             <p className="text-sm sm:text-base text-neutral-400 leading-relaxed font-sans">
-              Currently studying PCM in Lucknow while building independent software. I focus on
-              creating practical, local-first tooling, RAG pipelines, and full-stack web applications.
+              I study PCM in Lucknow and learn by making independent projects. I’m especially
+              interested in local-first software, code tools, and useful AI applications.
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-neutral-500">
               <Sparkles className="w-3.5 h-3.5 text-brand-purple" />
-              <span>Full-Stack · AI Tools · RAG · Local Systems</span>
+              <span>Web Development · AI Tools · Developer Tools</span>
             </div>
           </div>
         </div>
@@ -148,7 +144,7 @@ export const StatementSection: React.FC = () => {
           className="pt-4"
         >
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-emerald-400 tracking-tight flex items-center gap-3">
-            <span>Building Real Software · Experimenting with AI &amp; Tools</span>
+            <span>Projects are where I learn.</span>
           </h3>
         </motion.div>
       </div>

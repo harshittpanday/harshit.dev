@@ -8,10 +8,10 @@ import { playClickSound } from "@/lib/sound";
 
 export const WhatIDo: React.FC = () => {
   const iconMap: Record<string, React.ReactNode> = {
-    Layers: <Layers className="w-5 h-5 text-brand-purple" />,
-    Bot: <Bot className="w-5 h-5 text-brand-yellow-warm" />,
-    Sparkles: <Sparkles className="w-5 h-5 text-brand-cyan" />,
-    Rocket: <Rocket className="w-5 h-5 text-emerald-400" />,
+    Layers: <Layers className="w-5 h-5 text-brand-cyan" />,
+    Bot: <Bot className="w-5 h-5 text-brand-purple" />,
+    Sparkles: <Sparkles className="w-5 h-5 text-brand-yellow-warm" />,
+    Rocket: <Rocket className="w-5 h-5 text-brand-purple" />,
   };
 
   return (

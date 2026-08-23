@@ -70,92 +70,89 @@ export const HeroSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Giant Editorial Stacked Typography with Floating Collaborative Cursors */}
+        {/* Giant Editorial Stacked Typography with secondary collaborative cursors */}
         <div className="relative w-full my-2">
-          {/* Floating Cursor 1: Builder */}
-          <motion.div
-            animate={cursorFloat1}
-            className="absolute -top-4 left-4 sm:left-12 lg:left-24 z-20 hidden sm:flex items-center gap-1.5 pointer-events-none"
-          >
-            <MousePointer2 className="w-4 h-4 text-brand-pink fill-brand-pink" />
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-brand-pink text-black shadow-sm">
-              Builder
-            </span>
-          </motion.div>
+          <div className="hidden sm:flex min-h-8 items-center justify-between gap-8 max-w-4xl mx-auto mb-3 px-6 pointer-events-none opacity-80">
+            <motion.div animate={cursorFloat1} className="flex items-center gap-1.5">
+              <MousePointer2 className="w-4 h-4 text-brand-cyan fill-brand-cyan" />
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-brand-cyan text-neutral-950 shadow-sm">
+                Developer
+              </span>
+            </motion.div>
+            <motion.div animate={cursorFloat3} className="hidden md:flex items-center gap-1.5">
+              <MousePointer2 className="w-4 h-4 text-brand-purple fill-brand-purple" />
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-brand-purple text-neutral-950 shadow-sm">
+                AI Tools
+              </span>
+            </motion.div>
+            <motion.div animate={cursorFloat2} className="flex items-center gap-1.5">
+              <MousePointer2 className="w-4 h-4 text-brand-yellow-warm fill-brand-yellow-warm" />
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-yellow-warm text-neutral-950 shadow-sm">
+                {siteConfig.siteName}
+              </span>
+            </motion.div>
+          </div>
 
-          {/* Floating Cursor 2: Brand Tag */}
-          <motion.div
-            animate={cursorFloat2}
-            className="absolute bottom-16 right-4 sm:right-16 lg:right-28 z-20 hidden sm:flex items-center gap-1.5 pointer-events-none"
-          >
-            <MousePointer2 className="w-4 h-4 text-brand-purple fill-brand-purple" />
-            <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-purple text-neutral-950 shadow-sm">
-              {siteConfig.siteName}
-            </span>
-          </motion.div>
-
-          {/* Floating Cursor 3: AI Systems */}
-          <motion.div
-            animate={cursorFloat3}
-            className="absolute top-1/2 left-2 sm:left-8 z-20 hidden md:flex items-center gap-1.5 pointer-events-none"
-          >
-            <MousePointer2 className="w-4 h-4 text-brand-cyan fill-brand-cyan" />
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-brand-cyan text-neutral-950 shadow-sm">
-              AI Tools
-            </span>
-          </motion.div>
-
-          {/* Editorial Stacked Heading: STUDENT · BUILDER · ENGINEER · AI */}
-          <div className="flex flex-col items-center justify-center font-display font-extrabold tracking-tight uppercase leading-[0.92] sm:leading-[0.88]">
-            {/* Line 1: STUDENT (Lilac/Purple) */}
+          {/* Editorial Stacked Heading: STUDENT · BUILDER · ENGINEER · CREATOR */}
+          <div className="flex flex-col items-center justify-center font-display font-extrabold tracking-tight uppercase leading-[0.88]">
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] text-brand-purple hover:scale-[1.01] transition-transform duration-300">
+              <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300">
                 STUDENT
               </h1>
             </motion.div>
 
-            {/* Line 2: BUILDER (Warm Butter/Yellow) */}
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] text-brand-yellow hover:scale-[1.01] transition-transform duration-300">
+              <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-slate-100 hover:scale-[1.01] transition-transform duration-300">
                 BUILDER
               </h1>
             </motion.div>
 
-            {/* Line 3 & 4 Container with Sub-tags */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 relative w-full">
-              {/* Left Sub-tag (Desktop) */}
-              <motion.div
-                variants={itemVariants}
-                className="hidden lg:block text-left font-mono text-xs text-neutral-400 absolute left-4 bottom-6 max-w-[200px]"
-              >
-                <p className="text-neutral-500">// Focus</p>
-                <p className="text-neutral-300 font-medium">Turning ideas into real software</p>
-              </motion.div>
+            <motion.div variants={itemVariants}>
+              <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-brand-cyan">
+                ENGINEER
+              </h1>
+            </motion.div>
 
-              {/* Line 3: ENGINEER (Crisp White) */}
-              <motion.div variants={itemVariants}>
-                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] text-slate-100">
-                  ENGINEER
-                </h1>
-              </motion.div>
-
-              {/* Line 4: AI (Electric Cyan) */}
-              <motion.div variants={itemVariants}>
-                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] text-brand-cyan">
-                  &amp; AI
-                </h1>
-              </motion.div>
-
-              {/* Right Sub-tag (Desktop) */}
-              <motion.div
-                variants={itemVariants}
-                className="hidden lg:block text-right font-mono text-xs text-neutral-400 absolute right-4 bottom-6 max-w-[200px]"
-              >
-                <p className="text-neutral-500">// Location</p>
-                <p className="text-neutral-300 font-medium">{siteConfig.location}</p>
-              </motion.div>
-            </div>
+            <motion.div variants={itemVariants}>
+              <h1 className="text-[clamp(3rem,12.5vw,9.75rem)] text-brand-yellow-warm whitespace-nowrap">
+                &amp; CREATOR
+              </h1>
+            </motion.div>
           </div>
+
+          {/* Editorial metadata: side gutters on wide screens */}
+          <div className="hidden 2xl:block absolute -left-40 top-1/2 -translate-y-1/2 w-36 text-left font-mono text-[11px] leading-relaxed pointer-events-none">
+            <motion.div variants={itemVariants}>
+              <p className="text-neutral-600 uppercase tracking-wider">// Focus</p>
+              <p className="text-neutral-400 font-medium uppercase">
+                Turning ideas into real software
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="hidden 2xl:block absolute -right-36 top-1/2 -translate-y-1/2 w-32 text-right font-mono text-[11px] leading-relaxed pointer-events-none">
+            <motion.div variants={itemVariants}>
+              <p className="text-neutral-600 uppercase tracking-wider">// Location</p>
+              <p className="text-neutral-400 font-medium uppercase">{siteConfig.location}</p>
+            </motion.div>
+          </div>
+
+          {/* Dedicated row keeps metadata clear of the headline below 2xl */}
+          <motion.div
+            variants={itemVariants}
+            className="2xl:hidden grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-8 mt-6 sm:mt-8 px-2 sm:px-8 font-mono text-[10px] sm:text-[11px] leading-relaxed pointer-events-none"
+          >
+            <div className="max-w-44 text-left">
+              <p className="text-neutral-600 uppercase tracking-wider">// Focus</p>
+              <p className="text-neutral-400 font-medium uppercase">
+                Turning ideas into real software
+              </p>
+            </div>
+            <div className="max-w-40 text-right justify-self-end">
+              <p className="text-neutral-600 uppercase tracking-wider">// Location</p>
+              <p className="text-neutral-400 font-medium uppercase">{siteConfig.location}</p>
+            </div>
+          </motion.div>
         </div>
 
         {/* Bottom Connect & Resume Buttons */}

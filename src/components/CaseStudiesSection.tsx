@@ -47,8 +47,7 @@ export const CaseStudiesSection: React.FC = () => {
             </motion.h2>
 
             <p className="text-sm sm:text-base text-neutral-400 max-w-2xl font-sans leading-relaxed">
-              End-to-end full-stack architectures, AI systems, and product
-              execution — from research to deployed, high-throughput software.
+              A closer look at how selected projects work and the tools behind them.
             </p>
           </div>
 

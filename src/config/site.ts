@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Harshit Pandey",
   siteName: "harshittpanday",
-  title: "Harshit Pandey — Student, Builder & AI Engineer",
+  title: "Harshit Pandey — Student, Developer & Creator",
   description:
-    "Personal portfolio of Harshit Pandey. Student and builder developing AI-powered applications, developer tools, and full-stack web products.",
+    "Harshit Pandey is a student and developer building AI tools, developer tools, and web products.",
   url: "https://github.com/harshittpanday",
   email: "harshittpanday@gmail.com",
   location: "Lucknow, India",

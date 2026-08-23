@@ -56,44 +56,44 @@ export const disciplinesData: Discipline[] = [
     id: "fullstack",
     number: "01",
     title: "Full-Stack Development",
-    tagline: "Complete web applications from frontend to database",
+    tagline: "Web applications from frontend to database",
     description:
-      "Building complete web products with modern frontend frameworks, server-side logic, relational & document databases, secure authentication, and APIs.",
+      "Building web applications across the interface, server, database, authentication, and APIs.",
     icon: "Layers",
-    accentColor: "#A78BFA",
+    accentColor: "#22D3EE",
     tags: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
   },
   {
     id: "ai-tools",
     number: "02",
     title: "AI & Developer Tools",
-    tagline: "Local-first AI apps & developer productivity",
+    tagline: "Local-first AI apps and code tools",
     description:
-      "Building AI-powered applications, local-first tools, RAG architectures, and custom developer tooling designed to make software more intuitive.",
+      "Exploring local AI, retrieval, and code tools through practical applications.",
     icon: "Bot",
-    accentColor: "#FEF08A",
+    accentColor: "#A78BFA",
     tags: ["Python", "Ollama", "ChromaDB", "LangChain", "RAG", "SQLite"],
   },
   {
     id: "product-building",
     number: "03",
     title: "Product Building",
-    tagline: "From concept to deployed, functional software",
+    tagline: "From an idea to working software",
     description:
-      "Taking an idea from initial concept into a working, usable product and actively iterating on it through practical experimentation.",
+      "Turning an idea into a usable project, then improving it through feedback and testing.",
     icon: "Sparkles",
-    accentColor: "#22D3EE",
+    accentColor: "#FEF08A",
     tags: ["0→1 Building", "shadcn/ui", "Framer Motion", "UI Design", "Iteration"],
   },
   {
     id: "research-experimentation",
     number: "04",
     title: "Research & Experimentation",
-    tagline: "Exploring modern software architectures & AI",
+    tagline: "Learning through prototypes and experiments",
     description:
-      "Exploring applied AI, software architecture patterns, new developer tools, and unconventional product ideas through hands-on builds.",
+      "Trying new approaches to applied AI and developer tooling through hands-on projects.",
     icon: "Rocket",
-    accentColor: "#4ADE80",
+    accentColor: "#A78BFA",
     tags: ["Local AI", "Software Architecture", "Prototyping", "Tooling"],
   },
 ];
@@ -102,17 +102,17 @@ export const experienceSkillsData: SkillCategory[] = [
   {
     number: "01",
     title: "Languages",
-    color: "#A78BFA",
+    color: "#22D3EE",
     description:
-      "Core programming languages used across full-stack applications, CLI utilities, and AI pipelines.",
+      "Programming languages I use across web applications, command-line tools, and AI projects.",
     skills: ["Python", "TypeScript", "JavaScript", "HTML", "CSS", "SQL"],
   },
   {
     number: "02",
     title: "Frontend & UI",
-    color: "#FEF08A",
+    color: "#22D3EE",
     description:
-      "Modern interface technologies for building responsive, accessible, and animated web applications.",
+      "Tools I use for responsive interfaces and web animation.",
     skills: [
       "Next.js",
       "React",
@@ -127,7 +127,7 @@ export const experienceSkillsData: SkillCategory[] = [
     title: "Backend & Databases",
     color: "#22D3EE",
     description:
-      "Server runtimes, ORMs, cloud services, and persistent databases for structured data storage.",
+      "Backend tools and databases used in my web projects.",
     skills: [
       "Node.js",
       "PostgreSQL",
@@ -140,10 +140,10 @@ export const experienceSkillsData: SkillCategory[] = [
   },
   {
     number: "04",
-    title: "AI, Tools & Workflow",
-    color: "#4ADE80",
+    title: "AI & Tooling",
+    color: "#A78BFA",
     description:
-      "Local AI runtimes, RAG pipelines, version control, and developer deployment environments.",
+      "AI, version control, containers, and deployment tools I work with.",
     skills: [
       "Ollama",
       "LangChain",
@@ -219,7 +219,7 @@ export const caseStudiesData: CaseStudy[] = [
       "AI APIs",
     ],
     githubUrl: "https://github.com/harshittpanday/intent",
-    accentColor: "#FEF08A",
+    accentColor: "#A78BFA",
   },
   {
     id: "threadly",
@@ -248,7 +248,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Tailwind CSS",
     ],
     githubUrl: "https://github.com/harshittpanday/threadly",
-    accentColor: "#22D3EE",
+    accentColor: "#FEF08A",
   },
 ];
 
@@ -293,7 +293,7 @@ export const projectsData: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Neon"],
     githubUrl: "https://github.com/harshittpanday/intent",
     featured: true,
-    accentColor: "#FEF08A",
+    accentColor: "#A78BFA",
   },
   {
     id: "threadly",
@@ -314,7 +314,7 @@ export const projectsData: Project[] = [
     stack: ["Next.js", "TypeScript", "Clerk", "Firebase", "Cloudinary"],
     githubUrl: "https://github.com/harshittpanday/threadly",
     featured: true,
-    accentColor: "#22D3EE",
+    accentColor: "#FEF08A",
   },
   {
     id: "personal-ai",
@@ -334,7 +334,7 @@ export const projectsData: Project[] = [
     stack: ["Python", "LangChain", "ChromaDB", "Ollama", "SQLite"],
     githubUrl: "https://github.com/harshittpanday/personal-ai",
     featured: false,
-    accentColor: "#4ADE80",
+    accentColor: "#A78BFA",
   },
   {
     id: "study-system",
@@ -354,7 +354,7 @@ export const projectsData: Project[] = [
     stack: ["Next.js", "React", "TypeScript", "Prisma", "Tailwind CSS"],
     githubUrl: "https://github.com/harshittpanday",
     featured: false,
-    accentColor: "#F472B6",
+    accentColor: "#FEF08A",
   },
   {
     id: "heliosynctech",
@@ -374,7 +374,7 @@ export const projectsData: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/harshittpanday",
     featured: false,
-    accentColor: "#38BDF8",
+    accentColor: "#22D3EE",
   },
 ];
 
@@ -411,7 +411,7 @@ export const techStackCategories = [
     ],
   },
   {
-    category: "AI, Tools & Workflow",
+    category: "AI & Tooling",
     items: [
       { name: "Ollama", icon: "Bot", color: "#FFFFFF" },
       { name: "LangChain", icon: "GitFork", color: "#4ADE80" },

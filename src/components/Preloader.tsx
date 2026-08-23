@@ -163,7 +163,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
           <div className="text-right">
             <p className="text-xs font-mono text-neutral-500 hidden sm:block">
-              Crafted with Next.js, Framer Motion & Systems Design
+              Crafted with Next.js &amp; Framer Motion
             </p>
           </div>
         </div>

@@ -11,7 +11,9 @@ export const BackgroundCanvas: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
+    let isRunning = !document.hidden;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
@@ -49,7 +51,7 @@ export const BackgroundCanvas: React.FC = () => {
     let mouseX = -1000;
     let mouseY = -1000;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handlePointerMove = (e: PointerEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     };
@@ -60,7 +62,7 @@ export const BackgroundCanvas: React.FC = () => {
       height = canvas.height = window.innerHeight;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("resize", handleResize);
 
     const render = () => {
@@ -80,9 +82,10 @@ export const BackgroundCanvas: React.FC = () => {
         // Mouse proximity interaction
         const dx = mouseX - p.x;
         const dy = mouseY - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+        const distanceSquared = dx * dx + dy * dy;
         let extraAlpha = 0;
-        if (dist < 120) {
+        if (distanceSquared < 14400) {
+          const dist = Math.sqrt(distanceSquared);
           extraAlpha = (1 - dist / 120) * 0.4;
         }
 
@@ -94,8 +97,11 @@ export const BackgroundCanvas: React.FC = () => {
         // Connect nearby particles with subtle lines
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
-          const distBetween = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (distBetween < 100) {
+          const lineX = p.x - p2.x;
+          const lineY = p.y - p2.y;
+          const lineDistanceSquared = lineX * lineX + lineY * lineY;
+          if (lineDistanceSquared < 10000) {
+            const distBetween = Math.sqrt(lineDistanceSquared);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -105,14 +111,25 @@ export const BackgroundCanvas: React.FC = () => {
         }
       }
 
-      animationFrameId = requestAnimationFrame(render);
+      if (isRunning && !reducedMotion) {
+        animationFrameId = requestAnimationFrame(render);
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      isRunning = !document.hidden;
+      cancelAnimationFrame(animationFrameId);
+      if (isRunning) render();
     };
 
     render();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      isRunning = false;
+      window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

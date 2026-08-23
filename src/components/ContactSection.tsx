@@ -121,8 +121,7 @@ export const ContactSection: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-6xl font-display font-bold text-white tracking-tight mb-6"
               >
-                Let&apos;s build something{" "}
-                <span className="text-brand-purple">remarkable</span>.
+                Let&apos;s <span className="text-brand-yellow-warm">talk</span>.
               </motion.h2>
 
               <motion.p
@@ -132,9 +131,7 @@ export const ContactSection: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-base sm:text-lg text-neutral-400 font-sans leading-relaxed mb-8 max-w-md"
               >
-                Whether you have an ambitious product idea, want to architect
-                an AI-native system, or just want to chat about tech—my inbox
-                is always open.
+                Have a project, opportunity, or question? Send me a note.
               </motion.p>
 
               {/* Email */}

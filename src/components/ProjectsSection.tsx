@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { projectsData, Project } from "@/data/portfolioData";
 import { ProjectModal } from "./ProjectModal";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
@@ -13,13 +13,14 @@ export const ProjectsSection: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState<number>(4);
 
-  const categories = [
-    "All",
-    "AI & Tools",
-    "Full-Stack SaaS",
-    "Real-time Systems",
-    "Creative Dev",
-  ];
+  const categories = ["All", ...Array.from(new Set(projectsData.map((project) => project.category)))];
+  const categoryColors: Record<string, string> = {
+    All: "#FEF08A",
+    "AI & Tools": "#A78BFA",
+    "Full-Stack": "#22D3EE",
+    Social: "#FEF08A",
+    Web: "#22D3EE",
+  };
 
   const filteredProjects =
     selectedCategory === "All"
@@ -46,12 +47,12 @@ export const ProjectsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl sm:text-6xl font-display font-bold text-brand-purple tracking-tight mb-3"
+                className="text-4xl sm:text-6xl font-display font-bold text-brand-yellow-warm tracking-tight mb-3"
               >
                 My Projects
               </motion.h2>
               <p className="text-sm sm:text-base text-neutral-400 font-sans">
-                Curated portfolio of production applications, developer tools, and AI prototypes.
+                AI tools, developer tools, and web products I&apos;ve built.
               </p>
             </div>
 
@@ -67,9 +68,10 @@ export const ProjectsSection: React.FC = () => {
                   }}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all ${
                     selectedCategory === category
-                      ? "bg-brand-purple text-neutral-950 font-bold shadow-md"
+                      ? "text-neutral-950 font-bold shadow-md"
                       : "text-neutral-400 hover:text-white hover:bg-white/5"
                   }`}
+                  style={selectedCategory === category ? { backgroundColor: categoryColors[category] } : undefined}
                 >
                   {category}
                 </button>
@@ -79,15 +81,11 @@ export const ProjectsSection: React.FC = () => {
 
           {/* Projects Rows */}
           <div className="flex flex-col divide-y divide-white/10">
-            <AnimatePresence mode="popLayout">
               {displayedProjects.map((project) => (
                 <motion.div
                   key={project.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4 }}
+                  layout="position"
+                  transition={{ layout: { duration: 0.24, ease: [0.22, 1, 0.36, 1] } }}
                   onClick={() => openProject(project)}
                   className="group py-8 sm:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer hover:bg-white/[0.02] px-4 sm:px-6 rounded-2xl transition-all duration-300 relative"
                 >
@@ -116,7 +114,7 @@ export const ProjectsSection: React.FC = () => {
 
                   {/* Right Side: Tech Stack & Actions */}
                   <div className="flex flex-col md:items-end justify-between gap-3">
-                    <div className="text-xs font-mono text-neutral-300 font-medium">
+                    <div className="text-xs font-mono font-medium" style={{ color: project.accentColor }}>
                       {project.category}
                     </div>
 
@@ -167,7 +165,6 @@ export const ProjectsSection: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </AnimatePresence>
           </div>
 
           {/* Load More Button if more projects available */}

@@ -18,7 +18,7 @@ export const ExperienceSkills: React.FC = () => {
           className="mb-14"
         >
           <h2 className="text-3xl sm:text-5xl font-display font-bold text-brand-yellow-warm tracking-tight">
-            Experience &amp; skills
+            Skills
           </h2>
         </motion.div>
 

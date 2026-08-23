@@ -76,7 +76,7 @@ export const TechStackSection: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center justify-center gap-2 text-xs font-mono text-brand-purple uppercase tracking-widest mb-3"
+          className="flex items-center justify-center gap-2 text-xs font-mono text-brand-cyan uppercase tracking-widest mb-3"
         >
           <span>Tools &amp; Capabilities</span>
         </motion.div>
@@ -86,7 +86,7 @@ export const TechStackSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-6xl font-display font-bold text-brand-purple tracking-tight mb-6"
+          className="text-4xl sm:text-6xl font-display font-bold text-brand-cyan tracking-tight mb-6"
         >
           MY TECH STACK
         </motion.h2>
@@ -98,11 +98,7 @@ export const TechStackSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-xl sm:text-2xl md:text-3xl font-display font-medium text-neutral-300 max-w-4xl mx-auto leading-snug"
         >
-          My expertise spans a diverse range of{" "}
-          <span className="text-brand-yellow-warm font-semibold">technologies</span>, enabling me to
-          deliver comprehensive and{" "}
-          <span className="text-brand-cyan font-semibold">cutting-edge solutions</span> across
-          various platforms.
+          Languages, frameworks, and tools I use in my projects.
         </motion.p>
       </div>
 

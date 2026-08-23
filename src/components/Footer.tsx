@@ -36,18 +36,16 @@ export const Footer: React.FC = () => {
             <div className="md:col-span-4 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-snug">
-                  Where{" "}
-                  <span className="text-brand-purple">aesthetics</span> &amp;{" "}
-                  <span className="text-brand-cyan">engineering</span> meet.
+                  Student. Developer. <span className="text-brand-yellow-warm">Creator.</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-400 font-sans mt-3">
-                  Architecting software products that are fast, dependable, and visually stunning.
+                  Building AI tools, developer tools, and web products.
                 </p>
               </div>
 
               <div className="mt-6 flex items-center gap-2 text-xs font-mono text-neutral-500">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Available for high-impact projects</span>
+                <span>Open to opportunities and collaborations</span>
               </div>
             </div>
 
@@ -136,7 +134,7 @@ export const Footer: React.FC = () => {
               >
                 <div className="flex flex-col text-left">
                   <span className="font-bold">Case Studies</span>
-                  <span className="text-[10px] text-neutral-400">Explore Deep</span>
+                  <span className="text-[10px] text-neutral-400">See the details</span>
                 </div>
                 <div className="w-7 h-7 rounded-full bg-brand-yellow-warm/20 text-brand-yellow-warm flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
                   <ArrowUpRight className="w-3.5 h-3.5" />

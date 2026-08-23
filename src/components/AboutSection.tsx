@@ -41,7 +41,7 @@ export const AboutSection: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2 text-xs font-mono text-brand-purple uppercase tracking-widest mb-3"
+            className="flex items-center gap-2 text-xs font-mono text-brand-yellow-warm uppercase tracking-widest mb-3"
           >
             <span>Background &amp; Narrative</span>
           </motion.div>
@@ -59,9 +59,9 @@ export const AboutSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl sm:text-4xl font-display font-bold text-brand-purple tracking-tight mt-2"
+            className="text-2xl sm:text-4xl font-display font-bold text-brand-yellow-warm tracking-tight mt-2"
           >
-            Full-Stack Engineer &amp; AI Systems Architect
+            Student, Developer &amp; Creator
           </motion.p>
         </div>
 
@@ -82,23 +82,21 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <h3 className="text-xl sm:text-2xl font-display font-semibold text-white leading-snug">
-                I build software at the intersection of{" "}
-                <span className="text-brand-purple">resilient system architecture</span>,{" "}
-                <span className="text-brand-cyan">tactile interactive craft</span>, and{" "}
-                <span className="text-brand-yellow-warm">autonomous AI workflows</span>.
+                I’m a student in Lucknow who enjoys making{" "}
+                <span className="text-brand-purple">AI tools</span>,{" "}
+                <span className="text-brand-cyan">developer tools</span>, and{" "}
+                <span className="text-brand-yellow-warm">web products</span>.
               </h3>
 
               <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed">
-                Rather than treating engineering and product design as separate silos, I work
-                across the entire stack. From configuring low-latency WebSocket backplanes and RAG
-                pipelines to sculpting fluid, responsive interfaces with micro-animations that make
-                software memorable.
+                I learn by taking ideas from a rough prototype to working software. That means
+                writing the interface, backend, data layer, and the small interactions that make a
+                product pleasant to use.
               </p>
 
               <p className="text-sm sm:text-base text-neutral-400 font-sans leading-relaxed">
-                My work centers around turning complex technical challenges—such as AST code
-                patching, distributed state sync, and deterministic workflow compilation—into
-                effortless, delightful tools that empower builders and teams.
+                I’m most interested in practical projects that help people research, understand
+                code, or work more clearly. The projects on this site show that work in detail.
               </p>
             </div>
 
@@ -121,9 +119,9 @@ export const AboutSection: React.FC = () => {
               <div className="flex flex-col">
                 <span className="font-mono text-xs text-neutral-500">// Principle 03</span>
                 <span className="text-sm font-semibold text-neutral-200 mt-1">
-                  AI Integration
+                  Useful AI
                 </span>
-                <span className="text-xs text-neutral-400">Meaningful autonomy</span>
+                <span className="text-xs text-neutral-400">Only where it helps</span>
               </div>
             </div>
           </motion.div>
@@ -175,13 +173,13 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
-                Researching multi-agent coordination frameworks, WebAssembly AST parsers, and
-                sub-second deterministic DAG execution engines.
+                Exploring local AI tools, codebase search, and practical web products through
+                independent projects.
               </p>
 
               <div className="flex items-center gap-2 mt-4 pt-3 border-t border-white/5 text-xs font-mono text-neutral-400">
                 <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>Shipping active prototypes</span>
+                <span>Building independent projects</span>
               </div>
             </motion.div>
 

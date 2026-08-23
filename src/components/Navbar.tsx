@@ -27,27 +27,35 @@ export const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
+    let scrollFrame = 0;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-
-      const sections = ["home", "case-studies", "projects", "about", "contact"];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+      if (scrollFrame) return;
+      scrollFrame = window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 40);
+        scrollFrame = 0;
+      });
     };
 
+    const sections = ["home", "case-studies", "projects", "about", "contact"]
+      .map((section) => document.getElementById(section))
+      .filter((section): section is HTMLElement => Boolean(section));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-18% 0px -62%", threshold: [0, 0.25, 0.5] }
+    );
+    sections.forEach((section) => observer.observe(section));
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.cancelAnimationFrame(scrollFrame);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollTo = (href: string) => {
