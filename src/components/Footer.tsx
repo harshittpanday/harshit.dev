@@ -4,11 +4,6 @@ import React from "react";
 import { siteConfig } from "@/config/site";
 import {
   ArrowUp,
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
 } from "lucide-react";
 import { playClickSound } from "@/lib/sound";
 
@@ -33,7 +28,7 @@ export const Footer: React.FC = () => {
         <div className="p-8 sm:p-12 rounded-3xl bg-[#0c0c12] border border-white/10 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12">
             {/* Column 1: Editorial Tagline (4 Cols) */}
-            <div className="md:col-span-4 flex flex-col justify-between">
+            <div className="md:col-span-7 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-snug">
                   Still learning. <span className="text-brand-yellow-warm">Always making.</span>
@@ -50,11 +45,11 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Column 2: Explore Links (3 Cols) */}
-            <div className="md:col-span-3 flex flex-col">
+            <div className="md:col-span-5 flex flex-col md:items-end">
               <span className="text-xs font-mono text-brand-yellow-warm uppercase tracking-wider mb-4">
                 Explore
               </span>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-wrap gap-x-5 gap-y-2.5 md:justify-end">
                 {siteConfig.navItems.map((item) => (
                   <li key={item.label}>
                     <button
@@ -68,79 +63,6 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Column 3: Follow Me (3 Cols) */}
-            <div className="md:col-span-3 flex flex-col">
-              <span className="text-xs font-mono text-brand-cyan uppercase tracking-wider mb-4">
-                Follow Me
-              </span>
-              <ul className="flex flex-col gap-2.5">
-                <li>
-                  <a
-                    href={siteConfig.socials.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={playClickSound}
-                    className="flex items-center gap-2 text-xs sm:text-sm text-neutral-400 hover:text-white transition-colors"
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                    <span>GitHub</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={siteConfig.socials.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={playClickSound}
-                    className="flex items-center gap-2 text-xs sm:text-sm text-neutral-400 hover:text-white transition-colors"
-                  >
-                    <Linkedin className="w-3.5 h-3.5 text-brand-cyan" />
-                    <span>LinkedIn</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={siteConfig.socials.twitter}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={playClickSound}
-                    className="flex items-center gap-2 text-xs sm:text-sm text-neutral-400 hover:text-white transition-colors"
-                  >
-                    <Twitter className="w-3.5 h-3.5 text-brand-purple" />
-                    <span>Twitter / X</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Quick Action CTAs (2 Cols) */}
-            <div className="md:col-span-2 flex flex-col gap-3 justify-center">
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-brand-purple/20 border border-white/10 hover:border-brand-purple/40 text-xs font-mono text-white transition-all group"
-              >
-                <div className="flex flex-col text-left">
-                  <span className="font-bold">Contact Me</span>
-                  <span className="text-[10px] text-neutral-400">Say Hello!</span>
-                </div>
-                <div className="w-7 h-7 rounded-full bg-brand-purple/20 text-brand-purple flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </div>
-              </button>
-
-              <button
-                onClick={() => scrollTo("#case-studies")}
-                className="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-brand-yellow-warm/20 border border-white/10 hover:border-brand-yellow-warm/40 text-xs font-mono text-white transition-all group"
-              >
-                <div className="flex flex-col text-left">
-                  <span className="font-bold">Case Studies</span>
-                  <span className="text-[10px] text-neutral-400">See the details</span>
-                </div>
-                <div className="w-7 h-7 rounded-full bg-brand-yellow-warm/20 text-brand-yellow-warm flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </div>
-              </button>
-            </div>
           </div>
         </div>
 

@@ -22,17 +22,18 @@ export const AudioToggle: React.FC = () => {
             : "border-white/10 text-neutral-400 hover:text-white"
         }`}
         title={enabled ? "Mute interactive audio" : "Enable tactile sound feedback"}
-        aria-label="Toggle tactile sound feedback"
+        aria-label={enabled ? "Disable interactive audio" : "Enable interactive audio"}
+        aria-pressed={enabled}
       >
         {enabled ? (
           <>
             <Volume2 className="w-4 h-4 text-brand-purple animate-pulse" />
-            <span className="text-[11px] font-mono font-medium hidden sm:inline">Audio On</span>
+            <span className="text-[11px] font-mono font-medium">Audio On</span>
           </>
         ) : (
           <>
             <VolumeX className="w-4 h-4" />
-            <span className="text-[11px] font-mono hidden sm:inline">Audio Off</span>
+            <span className="text-[11px] font-mono">Audio Off</span>
           </>
         )}
       </button>

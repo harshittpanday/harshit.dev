@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import {
   Home,
-  BookOpen,
   Briefcase,
   User,
+  Code2,
   Mail,
   Menu,
   X,
@@ -21,9 +21,9 @@ export const Navbar: React.FC = () => {
 
   const iconMap: Record<string, React.ReactNode> = {
     Home: <Home className="w-3.5 h-3.5" />,
-    BookOpen: <BookOpen className="w-3.5 h-3.5" />,
     Briefcase: <Briefcase className="w-3.5 h-3.5" />,
     User: <User className="w-3.5 h-3.5" />,
+    Code2: <Code2 className="w-3.5 h-3.5" />,
   };
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
       });
     };
 
-    const sections = ["home", "case-studies", "projects", "about", "contact"]
+    const sections = ["home", "about", "projects", "skills", "contact"]
       .map((section) => document.getElementById(section))
       .filter((section): section is HTMLElement => Boolean(section));
     const observer = new IntersectionObserver(

@@ -102,9 +102,6 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             {siteConfig.siteName}
           </span>
         </div>
-        <div className="font-mono text-xs text-neutral-500 tracking-widest uppercase hidden sm:block">
-          Portfolio Experience 2026
-        </div>
         <button
           onClick={() => {
             setIsDone(true);
@@ -161,11 +158,6 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             </div>
           </div>
 
-          <div className="text-right">
-            <p className="text-xs font-mono text-neutral-500 hidden sm:block">
-              Crafted with Next.js &amp; Framer Motion
-            </p>
-          </div>
         </div>
       </div>
 

@@ -136,6 +136,11 @@ body {
 
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {

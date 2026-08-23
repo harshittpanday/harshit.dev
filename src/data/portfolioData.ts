@@ -109,41 +109,26 @@ export const experienceSkillsData: SkillCategory[] = [
   },
   {
     number: "02",
-    title: "Frontend & UI",
+    title: "Web",
     color: "#22D3EE",
     description:
-      "Tools I use for responsive interfaces and web animation.",
+      "Frameworks and tools I use to build web interfaces and APIs.",
     skills: [
       "Next.js",
       "React",
       "Tailwind CSS",
       "Framer Motion",
       "shadcn/ui",
-      "Responsive Layouts",
-    ],
-  },
-  {
-    number: "03",
-    title: "Backend & Databases",
-    color: "#22D3EE",
-    description:
-      "Backend tools and databases used in my web projects.",
-    skills: [
       "Node.js",
-      "PostgreSQL",
-      "Neon",
-      "Prisma",
-      "Firebase",
-      "SQLite",
       "REST APIs",
     ],
   },
   {
-    number: "04",
-    title: "AI & Tooling",
+    number: "03",
+    title: "AI / Developer Tools",
     color: "#A78BFA",
     description:
-      "AI, version control, containers, and deployment tools I work with.",
+      "Tools I use for local AI, retrieval, code projects, and version control.",
     skills: [
       "Ollama",
       "LangChain",
@@ -151,6 +136,20 @@ export const experienceSkillsData: SkillCategory[] = [
       "ChromaDB",
       "Git",
       "GitHub",
+    ],
+  },
+  {
+    number: "04",
+    title: "Databases / Infrastructure",
+    color: "#22D3EE",
+    description:
+      "Databases, containers, and deployment services used in my projects.",
+    skills: [
+      "PostgreSQL",
+      "Neon",
+      "Prisma",
+      "Firebase",
+      "SQLite",
       "Docker",
       "Vercel",
     ],

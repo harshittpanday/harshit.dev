@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import {
   MapPin,
   Clock,
-  Zap,
   Terminal,
-  Compass,
   Laptop,
 } from "lucide-react";
 import { playClickSound } from "@/lib/sound";
@@ -43,7 +41,7 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true }}
             className="flex items-center gap-2 text-xs font-mono text-brand-yellow-warm uppercase tracking-widest mb-3"
           >
-            <span>Background &amp; Narrative</span>
+            <span>About Me</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +50,7 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-6xl font-display font-bold text-slate-100 tracking-tight"
           >
-            Hello! I&apos;m Harshit 👋
+            Hi, I&apos;m Harshit 👋
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +59,7 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-4xl font-display font-bold text-brand-yellow-warm tracking-tight mt-2"
           >
-            I learn by making things.
+            A little about me.
           </motion.p>
         </div>
 
@@ -81,44 +79,9 @@ export const AboutSection: React.FC = () => {
                 <span>The Story</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-display font-semibold text-white leading-snug">
-                Most of what I know started with a project I wanted to use myself.
-              </h3>
-
-              <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed">
-                I usually start with a rough prototype, then work through the interface, backend,
-                data layer, and the small interactions until the whole thing feels usable.
+              <p className="text-base sm:text-lg text-neutral-300 font-sans leading-relaxed">
+                I’m still early in my journey, which is honestly the fun part. I got into coding by building random things I wanted to exist, and that slowly turned into web apps, AI tools, and developer tools. I learn mostly by shipping projects, trying unfamiliar tools, breaking things, fixing them, and getting a little better at understanding the engineering behind what I build.
               </p>
-
-              <p className="text-sm sm:text-base text-neutral-400 font-sans leading-relaxed">
-                Right now I’m most curious about local software, codebase search, and ways to make
-                online research less scattered.
-              </p>
-            </div>
-
-            {/* Quick Principles Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-8 mt-6 border-t border-white/10">
-              <div className="flex flex-col">
-                <span className="font-mono text-xs text-neutral-500">// Principle 01</span>
-                <span className="text-sm font-semibold text-neutral-200 mt-1">
-                  Keep It Quick
-                </span>
-                <span className="text-xs text-neutral-400">Respect the wait</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-mono text-xs text-neutral-500">// Principle 02</span>
-                <span className="text-sm font-semibold text-neutral-200 mt-1">
-                  Use What Fits
-                </span>
-                <span className="text-xs text-neutral-400">Tools serve the idea</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-mono text-xs text-neutral-500">// Principle 03</span>
-                <span className="text-sm font-semibold text-neutral-200 mt-1">
-                  Useful AI
-                </span>
-                <span className="text-xs text-neutral-400">Only where it helps</span>
-              </div>
             </div>
           </motion.div>
 
@@ -155,36 +118,12 @@ export const AboutSection: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Current Focus Widget */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-6 rounded-3xl bg-[#0e0e14] border border-white/10 flex flex-col justify-between"
-            >
-              <div className="flex items-center gap-2 text-xs font-mono text-brand-yellow-warm uppercase mb-3">
-                <Compass className="w-4 h-4" />
-                <span>Current Exploration</span>
-              </div>
-
-              <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
-                Testing local models, codebase search, and better ways to gather research from
-                different sources.
-              </p>
-
-              <div className="flex items-center gap-2 mt-4 pt-3 border-t border-white/5 text-xs font-mono text-neutral-400">
-                <Zap className="w-3.5 h-3.5 text-brand-yellow-warm" />
-                <span>Learning in public, one project at a time</span>
-              </div>
-            </motion.div>
-
             {/* Setup / Daily Driver Widget */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="p-6 rounded-3xl bg-[#0e0e14] border border-white/10 flex flex-col justify-between"
             >
               <div className="flex items-center gap-2 text-xs font-mono text-neutral-400 uppercase mb-3">
@@ -193,7 +132,7 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap gap-1.5">
-                {["Next.js", "TypeScript", "VS Code / Cursor", "Docker", "PostgreSQL", "Figma"].map(
+                {["Next.js", "TypeScript", "Antigravity IDE", "Docker", "PostgreSQL", "Figma"].map(
                   (tool) => (
                     <span
                       key={tool}

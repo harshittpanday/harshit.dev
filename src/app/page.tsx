@@ -1,17 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Preloader } from "@/components/Preloader";
 import { Navbar } from "@/components/Navbar";
 import { BackgroundCanvas } from "@/components/BackgroundCanvas";
 import { HeroSection } from "@/components/HeroSection";
-import { StatementSection } from "@/components/StatementSection";
-import { WhatIDo } from "@/components/WhatIDo";
-import { ExperienceSkills } from "@/components/ExperienceSkills";
-import { CaseStudiesSection } from "@/components/CaseStudiesSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
 import { TechStackSection } from "@/components/TechStackSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -40,29 +36,21 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Main Experience Revealed After Intro */}
-      <div className={`relative transition-opacity duration-700 ${introFinished ? "opacity-100" : "opacity-0"}`}>
-        <CustomCursor />
-        <BackgroundCanvas />
-        <Navbar />
+      {introFinished && (
+        <div className="relative">
+          <CustomCursor />
+          <BackgroundCanvas />
+          <Navbar />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: introFinished ? 1 : 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
           <HeroSection />
-          <StatementSection />
-          <WhatIDo />
-          <ExperienceSkills />
-          <CaseStudiesSection />
+          <AboutSection />
           <ProjectsSection />
           <TechStackSection />
-          <AboutSection />
           <ContactSection />
           <Footer />
           <AudioToggle />
-        </motion.div>
-      </div>
+        </div>
+      )}
     </main>
   );
 }

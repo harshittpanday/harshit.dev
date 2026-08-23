@@ -2,32 +2,18 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { projectsData, Project } from "@/data/portfolioData";
+import { caseStudiesData, projectsData, CaseStudy, Project } from "@/data/portfolioData";
 import { ProjectModal } from "./ProjectModal";
+import { CaseStudyModal } from "./CaseStudyModal";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { playClickSound } from "@/lib/sound";
 
 export const ProjectsSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [visibleCount, setVisibleCount] = useState<number>(4);
-
-  const categories = ["All", ...Array.from(new Set(projectsData.map((project) => project.category)))];
-  const categoryColors: Record<string, string> = {
-    All: "#FEF08A",
-    "AI & Tools": "#A78BFA",
-    "Full-Stack": "#22D3EE",
-    Social: "#FEF08A",
-    Web: "#22D3EE",
-  };
-
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projectsData
-      : projectsData.filter((p) => p.category === selectedCategory);
-
-  const displayedProjects = filteredProjects.slice(0, visibleCount);
+  const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
+  const [studyModalOpen, setStudyModalOpen] = useState(false);
+  const selectedProjects = projectsData.filter((project) => project.featured);
 
   const openProject = (project: Project) => {
     playClickSound();
@@ -35,12 +21,18 @@ export const ProjectsSection: React.FC = () => {
     setModalOpen(true);
   };
 
+  const openStudy = (study: CaseStudy) => {
+    playClickSound();
+    setSelectedStudy(study);
+    setStudyModalOpen(true);
+  };
+
   return (
     <>
       <section id="projects" className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="mb-12">
             <div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -49,39 +41,20 @@ export const ProjectsSection: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-6xl font-display font-bold text-brand-yellow-warm tracking-tight mb-3"
               >
-                My Projects
+                SELECTED PROJECTS
               </motion.h2>
               <p className="text-sm sm:text-base text-neutral-400 font-sans">
                 Things I&apos;ve made, how they work, and what I used to build them.
               </p>
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl glass-nav">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => {
-                    playClickSound();
-                    setSelectedCategory(category);
-                    setVisibleCount(4);
-                  }}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all ${
-                    selectedCategory === category
-                      ? "text-neutral-950 font-bold shadow-md"
-                      : "text-neutral-400 hover:text-white hover:bg-white/5"
-                  }`}
-                  style={selectedCategory === category ? { backgroundColor: categoryColors[category] } : undefined}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Projects Rows */}
           <div className="flex flex-col divide-y divide-white/10">
-              {displayedProjects.map((project) => (
+              {selectedProjects.map((project) => {
+                const study = caseStudiesData.find((item) => item.id === project.id);
+                return (
                 <motion.div
                   key={project.id}
                   layout="position"
@@ -131,6 +104,17 @@ export const ProjectsSection: React.FC = () => {
 
                     {/* Direct Quick Links */}
                     <div className="flex items-center gap-2 pt-1">
+                      {study && (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openStudy(study);
+                          }}
+                          className="px-3 py-1.5 rounded-full border border-white/10 text-[11px] font-mono text-neutral-300 hover:text-white hover:border-brand-purple/40 transition-colors"
+                        >
+                          Read case study
+                        </button>
+                      )}
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
@@ -164,24 +148,9 @@ export const ProjectsSection: React.FC = () => {
                     </div>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
           </div>
-
-          {/* Load More Button if more projects available */}
-          {visibleCount < filteredProjects.length && (
-            <div className="flex justify-center mt-12">
-              <button
-                onClick={() => {
-                  playClickSound();
-                  setVisibleCount((prev) => prev + 4);
-                }}
-                className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-neutral-900 border border-white/15 hover:border-brand-purple/50 text-sm font-mono text-white transition-all group shadow-lg"
-              >
-                <span>Load More</span>
-                <span className="text-brand-purple group-hover:translate-x-1 transition-transform">→</span>
-              </button>
-            </div>
-          )}
         </div>
       </section>
 
@@ -190,6 +159,11 @@ export const ProjectsSection: React.FC = () => {
         project={selectedProject}
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
+      />
+      <CaseStudyModal
+        study={selectedStudy}
+        isOpen={studyModalOpen}
+        onClose={() => setStudyModalOpen(false)}
       />
     </>
   );

@@ -37,8 +37,8 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       animation: {
-        "marquee-left": "marqueeLeft 35s linear infinite",
-        "marquee-right": "marqueeRight 35s linear infinite",
+        "marquee-left": "marqueeLeft 50s linear infinite",
+        "marquee-right": "marqueeRight 50s linear infinite",
         "float-slow": "float 6s ease-in-out infinite",
         "pulse-glow": "pulseGlow 4s ease-in-out infinite",
         "spin-slow": "spin 20s linear infinite",

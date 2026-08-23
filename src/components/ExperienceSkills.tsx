@@ -7,7 +7,7 @@ import { playClickSound } from "@/lib/sound";
 
 export const ExperienceSkills: React.FC = () => {
   return (
-    <section id="experience" className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5">
+    <section id="skills" className="relative py-24 px-4 sm:px-6 md:px-8 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -18,7 +18,7 @@ export const ExperienceSkills: React.FC = () => {
           className="mb-14"
         >
           <h2 className="text-3xl sm:text-5xl font-display font-bold text-brand-yellow-warm tracking-tight">
-            Skills
+            Skills &amp; Technologies
           </h2>
         </motion.div>
 
@@ -59,7 +59,7 @@ export const ExperienceSkills: React.FC = () => {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3.5 py-1.5 rounded-full bg-neutral-900/90 text-xs font-mono text-neutral-300 border border-white/10 group-hover:border-white/20 hover:text-white hover:border-brand-purple/50 transition-all duration-200"
+                    className="px-3.5 py-1.5 rounded-full bg-neutral-900/90 text-xs font-mono text-neutral-300 border border-white/10 group-hover:border-white/20 hover:text-white transition-all duration-200"
                   >
                     {skill}
                   </span>

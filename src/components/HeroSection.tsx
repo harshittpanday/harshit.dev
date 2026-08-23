@@ -49,7 +49,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 md:px-8 overflow-hidden select-none"
+      className="relative min-h-[92vh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 md:px-8 overflow-x-clip select-none"
     >
       <motion.div
         variants={containerVariants}
@@ -106,19 +106,19 @@ export const HeroSection: React.FC = () => {
           {/* Editorial Stacked Heading: STUDENT · BUILDER & · AI ENGINEER */}
           <div className="flex flex-col items-center justify-center font-display font-extrabold tracking-tight uppercase leading-[0.88]">
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-[clamp(3.15rem,13.5vw,10.5rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300">
+              <h1 className="text-[clamp(2.65rem,13.5vw,10.5rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300">
                 STUDENT
               </h1>
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-[clamp(3.1rem,13vw,10rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300 whitespace-nowrap">
+              <h1 className="text-[clamp(2.5rem,13vw,10rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300 whitespace-nowrap">
                 BUILDER &amp;
               </h1>
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-[clamp(2.8rem,11.7vw,9rem)] whitespace-nowrap hover:scale-[1.01] transition-transform duration-300">
+              <h1 className="max-w-full text-[clamp(2.05rem,11.7vw,9rem)] whitespace-nowrap hover:scale-[1.01] transition-transform duration-300">
                 <span className="text-brand-purple">AI</span>{" "}
                 <span className="text-brand-cyan">ENGINEER</span>
               </h1>
@@ -203,7 +203,7 @@ export const HeroSection: React.FC = () => {
           className="mt-12 sm:mt-16 flex flex-col items-center gap-2 cursor-pointer text-neutral-500 hover:text-neutral-300 transition-colors"
           onClick={() => {
             playClickSound();
-            document.querySelector("#statement")?.scrollIntoView({ behavior: "smooth" });
+            document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           <span className="text-[11px] font-mono uppercase tracking-widest">Scroll to explore</span>
