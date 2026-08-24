@@ -30,9 +30,9 @@ export const BackgroundCanvas: React.FC = () => {
     }> = [];
 
     const colors = [
-      "rgba(167, 139, 250, ", // purple
-      "rgba(254, 240, 138, ", // warm yellow
-      "rgba(34, 211, 238, ",  // cyan
+      "rgba(16, 17, 14, ",
+      "rgba(106, 110, 97, ",
+      "rgba(199, 240, 75, ",
     ];
 
     for (let i = 0; i < particleCount; i++) {
@@ -43,7 +43,7 @@ export const BackgroundCanvas: React.FC = () => {
         vy: (Math.random() - 0.5) * 0.25,
         radius: Math.random() * 1.5 + 0.8,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: Math.random() * 0.25 + 0.06,
+        alpha: Math.random() * 0.12 + 0.03,
       });
     }
 
@@ -104,7 +104,7 @@ export const BackgroundCanvas: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.035 * (1 - distBetween / 100)})`;
+            ctx.strokeStyle = `rgba(16, 17, 14, ${0.035 * (1 - distBetween / 100)})`;
             ctx.stroke();
           }
         }
@@ -135,13 +135,8 @@ export const BackgroundCanvas: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Soft Ambient Radial Lights */}
-      <div className="absolute -top-48 left-[12%] w-[520px] h-[520px] bg-white/[0.018] rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/3 -right-48 w-[440px] h-[440px] bg-cyan-900/[0.035] rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 left-[18%] w-[520px] h-[520px] bg-amber-900/[0.025] rounded-full blur-[180px] pointer-events-none" />
-      
       {/* Background Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-40" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-30" />
       
       {/* Subtle Grid Backdrop */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 mask-radial" />

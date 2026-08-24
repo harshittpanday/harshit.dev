@@ -52,14 +52,14 @@ export const TechStackSection: React.FC = () => {
   const row2 = allItems.slice(Math.ceil(allItems.length / 2));
 
   return (
-    <section id="skills" className="relative py-24 border-t border-white/5 overflow-hidden select-none">
+    <section id="skills" className="relative py-24 border-t border-[#10110E]/10 overflow-hidden select-none bg-[#ECEEDF]/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mb-14 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-6xl font-display font-bold text-brand-cyan tracking-tight"
+          className="text-4xl sm:text-6xl font-display font-bold text-[#10110E] tracking-tight"
         >
           TOOLS I BUILD WITH
         </motion.h2>
@@ -68,8 +68,8 @@ export const TechStackSection: React.FC = () => {
       {/* Infinite Dual-Direction Marquee */}
       <div className="flex flex-col gap-6 relative">
         {/* Left-Right Gradient Fade Overlays */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#08090b] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#08090b] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#F0F2E4] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#F0F2E4] to-transparent z-10 pointer-events-none" />
 
         {/* Row 1: Leftward Marquee */}
         <div className="flex overflow-hidden whitespace-nowrap group">
@@ -80,16 +80,15 @@ export const TechStackSection: React.FC = () => {
                   <div
                     key={`r1-${copy}-${tech.name}`}
                     onMouseEnter={playClickSound}
-                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0e0e14] border border-white/10 hover:border-white/25 hover:bg-neutral-900 transition-all cursor-default shadow-sm"
+                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#F8F9F0] border border-[#10110E]/10 hover:border-[#10110E]/25 hover:bg-white transition-all cursor-default"
                   >
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-white/5"
-                      style={{ color: tech.color }}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-[#C7F04B] text-[#10110E]"
                     >
                       {iconComponents[tech.icon] || <Code2 className="w-5 h-5" />}
                     </div>
                     <div className="flex flex-col text-left">
-                      <span className="text-sm font-display font-semibold text-white">{tech.name}</span>
+                      <span className="text-sm font-display font-semibold text-[#10110E]">{tech.name}</span>
                     </div>
                   </div>
                 ))}
@@ -107,16 +106,15 @@ export const TechStackSection: React.FC = () => {
                   <div
                     key={`r2-${copy}-${tech.name}`}
                     onMouseEnter={playClickSound}
-                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0e0e14] border border-white/10 hover:border-white/25 hover:bg-neutral-900 transition-all cursor-default shadow-sm"
+                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#F8F9F0] border border-[#10110E]/10 hover:border-[#10110E]/25 hover:bg-white transition-all cursor-default"
                   >
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-white/5"
-                      style={{ color: tech.color }}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-[#C7F04B] text-[#10110E]"
                     >
                       {iconComponents[tech.icon] || <Code2 className="w-5 h-5" />}
                     </div>
                     <div className="flex flex-col text-left">
-                      <span className="text-sm font-display font-semibold text-white">{tech.name}</span>
+                      <span className="text-sm font-display font-semibold text-[#10110E]">{tech.name}</span>
                     </div>
                   </div>
                 ))}

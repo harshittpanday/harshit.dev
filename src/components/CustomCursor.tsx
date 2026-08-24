@@ -74,7 +74,7 @@ export const CustomCursor: React.FC = () => {
     <>
       {/* Outer Spring Follower Ring */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-purple/50 bg-brand-purple/10 backdrop-blur-[1px] will-change-transform"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#10110E]/50 bg-[#10110E]/[0.04] will-change-transform"
         style={{
           x: ringX,
           y: ringY,
@@ -84,14 +84,14 @@ export const CustomCursor: React.FC = () => {
           width: isPointer ? 48 : 24,
           height: isPointer ? 48 : 24,
           borderWidth: isPointer ? "1.5px" : "1px",
-          borderColor: isPointer ? "rgba(167, 139, 250, 0.8)" : "rgba(255, 255, 255, 0.4)",
+          borderColor: isPointer ? "rgba(16, 17, 14, 0.8)" : "rgba(16, 17, 14, 0.45)",
         }}
         transition={{ type: "spring", damping: 20, stiffness: 300 }}
       />
 
       {/* Center Precision Dot */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-yellow-warm will-change-transform"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C7F04B] border border-[#10110E]/30 will-change-transform"
         style={{
           x: pointerX,
           y: pointerY,

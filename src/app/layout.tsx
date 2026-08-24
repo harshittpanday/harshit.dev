@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#08090b",
+  themeColor: "#F4F5E9",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -87,9 +87,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} dark`}
+      className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-[#08090b] text-slate-100 antialiased selection:bg-purple-500/30 selection:text-purple-200">
+      <body className="bg-[#F4F5E9] text-[#10110E] antialiased selection:bg-[#C7F04B] selection:text-[#10110E]">
         {children}
       </body>
     </html>

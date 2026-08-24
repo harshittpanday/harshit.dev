@@ -27,7 +27,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#08090b] text-slate-100 relative selection:bg-purple-500/30 selection:text-purple-200">
+    <main className="min-h-screen bg-[#F4F5E9] text-[#10110E] relative selection:bg-[#C7F04B] selection:text-[#10110E]">
       {/* Intro Preloader Sequence */}
       <AnimatePresence mode="wait">
         {!introFinished && (
@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* Main Experience Revealed After Intro */}
       {introFinished && (
-        <div className="relative">
+        <div className="editorial-theme relative">
           <CustomCursor />
           <BackgroundCanvas />
           <Navbar />

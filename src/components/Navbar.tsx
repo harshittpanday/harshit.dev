@@ -88,10 +88,10 @@ export const Navbar: React.FC = () => {
                 e.preventDefault();
                 scrollTo("#home");
               }}
-              className="flex items-center gap-2.5 px-4 py-2 rounded-full glass-nav hover:border-white/20 transition-all group"
+              className="flex items-center gap-2.5 px-4 py-2 rounded-full glass-nav hover:border-[#10110E]/25 transition-all group"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span className="font-mono text-sm font-semibold tracking-tight text-white/90 group-hover:text-white">
+              <span className="w-2 h-2 rounded-full bg-[#C7F04B] border border-[#10110E]/20 group-hover:scale-125 transition-transform" />
+              <span className="font-mono text-sm font-semibold tracking-tight text-[#10110E]">
                 {siteConfig.siteName}
               </span>
             </a>
@@ -114,14 +114,14 @@ export const Navbar: React.FC = () => {
                   onClick={() => scrollTo(item.href)}
                   className={`relative flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                     isActive
-                      ? "text-white font-semibold"
-                      : "text-neutral-400 hover:text-neutral-200"
+                      ? "text-[#10110E] font-semibold"
+                      : "text-[#62655B] hover:text-[#10110E]"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeNavTab"
-                      className="absolute inset-0 rounded-full bg-white/10 border border-white/15"
+                      className="absolute inset-0 rounded-full bg-[#10110E]/[0.06] border border-[#10110E]/10"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -141,9 +141,9 @@ export const Navbar: React.FC = () => {
           >
             <button
               onClick={() => scrollTo("#contact")}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full glass-nav text-xs font-medium text-neutral-200 hover:text-white hover:border-brand-purple/40 transition-all group"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full glass-nav text-xs font-medium text-[#62655B] hover:text-[#10110E] hover:border-[#10110E]/25 transition-all group"
             >
-              <Mail className="w-3.5 h-3.5 text-brand-purple group-hover:rotate-12 transition-transform" />
+              <Mail className="w-3.5 h-3.5 text-[#10110E] group-hover:rotate-12 transition-transform" />
               <span>Contact Me</span>
             </button>
 
@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
                 playClickSound();
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-full glass-nav text-neutral-300 hover:text-white"
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-full glass-nav text-[#62655B] hover:text-[#10110E]"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -170,7 +170,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-20 left-4 right-4 z-50 p-4 rounded-2xl glass-nav md:hidden border border-white/10 flex flex-col gap-2"
+            className="fixed top-20 left-4 right-4 z-50 p-4 rounded-2xl glass-nav md:hidden border border-[#10110E]/10 flex flex-col gap-2"
           >
             {siteConfig.navItems.map((item) => {
               const targetId = item.href.replace("#", "");
@@ -182,19 +182,19 @@ export const Navbar: React.FC = () => {
                   onClick={() => scrollTo(item.href)}
                   className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-white/10 text-white font-semibold"
-                      : "text-neutral-400 hover:text-white hover:bg-white/5"
+                      ? "bg-[#10110E]/[0.06] text-[#10110E] font-semibold"
+                      : "text-[#62655B] hover:text-[#10110E] hover:bg-[#10110E]/[0.04]"
                   }`}
                 >
-                  <span className="text-brand-purple">{iconMap[item.icon]}</span>
+                  <span className="text-[#10110E]">{iconMap[item.icon]}</span>
                   <span>{item.label}</span>
                 </button>
               );
             })}
-            <div className="h-px bg-white/10 my-1" />
+            <div className="h-px bg-[#10110E]/10 my-1" />
             <button
               onClick={() => scrollTo("#contact")}
-              className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-brand-purple/20 text-brand-purple hover:bg-brand-purple/30 font-medium text-sm transition-colors border border-brand-purple/30"
+              className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#C7F04B] text-[#10110E] hover:bg-[#B9E03F] font-medium text-sm transition-colors border border-[#10110E]/10"
             >
               <Mail className="w-4 h-4" />
               <span>Contact Me</span>

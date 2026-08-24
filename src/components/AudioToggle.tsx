@@ -18,8 +18,8 @@ export const AudioToggle: React.FC = () => {
         onClick={handleToggle}
         className={`flex items-center gap-2 px-3 py-2 rounded-full glass-nav border transition-all duration-300 shadow-lg ${
           enabled
-            ? "border-brand-purple/50 text-brand-purple bg-purple-950/40"
-            : "border-white/10 text-neutral-400 hover:text-white"
+            ? "border-[#10110E]/25 text-[#10110E] bg-[#C7F04B]"
+            : "border-[#10110E]/10 text-[#62655B] hover:text-[#10110E]"
         }`}
         title={enabled ? "Mute interactive audio" : "Enable tactile sound feedback"}
         aria-label={enabled ? "Disable interactive audio" : "Enable interactive audio"}
@@ -27,7 +27,7 @@ export const AudioToggle: React.FC = () => {
       >
         {enabled ? (
           <>
-            <Volume2 className="w-4 h-4 text-brand-purple animate-pulse" />
+            <Volume2 className="w-4 h-4 text-[#10110E] animate-pulse" />
             <span className="text-[11px] font-mono font-medium">Audio On</span>
           </>
         ) : (

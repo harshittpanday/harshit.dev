@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
           variants={itemVariants}
           className="flex items-center gap-3 mb-6 sm:mb-8"
         >
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-neutral-900 border border-white/15 p-1 flex items-center justify-center shadow-lg shadow-black/50 overflow-hidden">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#F8F9F0] border border-[#10110E]/15 p-1 flex items-center justify-center overflow-hidden">
             <div className="relative w-full h-full rounded-full overflow-hidden">
               <Image
                 src="/images/pfp.png"
@@ -74,9 +74,9 @@ export const HeroSection: React.FC = () => {
               />
             </div>
           </div>
-          <div className="px-4 py-2 rounded-full glass-nav text-xs sm:text-sm font-mono text-neutral-300 border border-white/10 flex items-center gap-2">
+          <div className="px-4 py-2 rounded-full glass-nav text-xs sm:text-sm font-mono text-[#62655B] border border-[#10110E]/10 flex items-center gap-2">
             <span>Hello, I&apos;m {siteConfig.name}</span>
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="inline-block w-2 h-2 rounded-full bg-[#C7F04B] border border-[#10110E]/20 animate-pulse" />
           </div>
         </motion.div>
 
@@ -84,20 +84,20 @@ export const HeroSection: React.FC = () => {
         <div className="relative w-full my-2">
           <div className="hidden sm:flex min-h-8 items-center justify-between gap-8 max-w-4xl mx-auto mb-3 px-6 pointer-events-none opacity-80">
             <motion.div animate={cursorFloat1} className="flex items-center gap-1.5">
-              <MousePointer2 className="w-4 h-4 text-brand-cyan fill-brand-cyan" />
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-brand-cyan text-neutral-950 shadow-sm">
+              <MousePointer2 className="w-4 h-4 text-[#10110E] fill-[#10110E]" />
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-[#C7F04B] text-[#10110E]">
                 Developer
               </span>
             </motion.div>
             <motion.div animate={cursorFloat3} className="hidden md:flex items-center gap-1.5">
-              <MousePointer2 className="w-4 h-4 text-brand-purple fill-brand-purple" />
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-brand-purple text-neutral-950 shadow-sm">
+              <MousePointer2 className="w-4 h-4 text-[#10110E] fill-[#10110E]" />
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-[#ECEEDF] text-[#10110E] border border-[#10110E]/10">
                 AI Tools
               </span>
             </motion.div>
             <motion.div animate={cursorFloat2} className="flex items-center gap-1.5">
-              <MousePointer2 className="w-4 h-4 text-brand-yellow-warm fill-brand-yellow-warm" />
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-yellow-warm text-neutral-950 shadow-sm">
+              <MousePointer2 className="w-4 h-4 text-[#10110E] fill-[#10110E]" />
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#10110E] text-[#F8F9F0]">
                 {siteConfig.siteName}
               </span>
             </motion.div>
@@ -106,21 +106,21 @@ export const HeroSection: React.FC = () => {
           {/* Editorial Stacked Heading: STUDENT · BUILDER & · AI ENGINEER */}
           <div className="flex flex-col items-center justify-center font-display font-extrabold tracking-tight uppercase leading-[0.88]">
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-[clamp(2.65rem,13.5vw,10.5rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300">
+              <h1 className="text-[clamp(2.65rem,13.5vw,10.5rem)] text-[#10110E] hover:scale-[1.01] transition-transform duration-300">
                 STUDENT
               </h1>
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
-              <h1 className="text-[clamp(2.5rem,13vw,10rem)] text-brand-yellow-warm hover:scale-[1.01] transition-transform duration-300 whitespace-nowrap">
+              <h1 className="text-[clamp(2.5rem,13vw,10rem)] text-[#10110E] hover:scale-[1.01] transition-transform duration-300 whitespace-nowrap">
                 BUILDER &amp;
               </h1>
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
               <h1 className="max-w-full text-[clamp(2.05rem,11.7vw,9rem)] whitespace-nowrap hover:scale-[1.01] transition-transform duration-300">
-                <span className="text-brand-purple">AI</span>{" "}
-                <span className="text-brand-cyan">ENGINEER</span>
+                <span className="text-[#10110E]">AI</span>{" "}
+                <span className="text-[#10110E]">ENGINEER</span>
               </h1>
             </motion.div>
           </div>
@@ -128,8 +128,8 @@ export const HeroSection: React.FC = () => {
           {/* Editorial metadata: side gutters on wide screens */}
           <div className="hidden 2xl:block absolute -left-40 top-1/2 -translate-y-1/2 w-36 text-left font-mono text-[11px] leading-relaxed pointer-events-none">
             <motion.div variants={itemVariants}>
-              <p className="text-neutral-600 uppercase tracking-wider">// Focus</p>
-              <p className="text-neutral-400 font-medium uppercase">
+              <p className="text-[#62655B] uppercase tracking-wider">// Focus</p>
+              <p className="text-[#10110E] font-medium uppercase">
                 Building things I want to exist
               </p>
             </motion.div>
@@ -137,8 +137,8 @@ export const HeroSection: React.FC = () => {
 
           <div className="hidden 2xl:block absolute -right-36 top-1/2 -translate-y-1/2 w-32 text-right font-mono text-[11px] leading-relaxed pointer-events-none">
             <motion.div variants={itemVariants}>
-              <p className="text-neutral-600 uppercase tracking-wider">// Location</p>
-              <p className="text-neutral-400 font-medium uppercase">{siteConfig.location}</p>
+              <p className="text-[#62655B] uppercase tracking-wider">// Location</p>
+              <p className="text-[#10110E] font-medium uppercase">{siteConfig.location}</p>
             </motion.div>
           </div>
 
@@ -148,14 +148,14 @@ export const HeroSection: React.FC = () => {
             className="2xl:hidden grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-8 mt-6 sm:mt-8 px-2 sm:px-8 font-mono text-[10px] sm:text-[11px] leading-relaxed pointer-events-none"
           >
             <div className="max-w-44 text-left">
-              <p className="text-neutral-600 uppercase tracking-wider">// Focus</p>
-              <p className="text-neutral-400 font-medium uppercase">
+              <p className="text-[#62655B] uppercase tracking-wider">// Focus</p>
+              <p className="text-[#10110E] font-medium uppercase">
                 Building things I want to exist
               </p>
             </div>
             <div className="max-w-40 text-right justify-self-end">
-              <p className="text-neutral-600 uppercase tracking-wider">// Location</p>
-              <p className="text-neutral-400 font-medium uppercase">{siteConfig.location}</p>
+              <p className="text-[#62655B] uppercase tracking-wider">// Location</p>
+              <p className="text-[#10110E] font-medium uppercase">{siteConfig.location}</p>
             </div>
           </motion.div>
         </div>
@@ -172,11 +172,11 @@ export const HeroSection: React.FC = () => {
               playClickSound();
               document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-neutral-900/90 border border-white/15 hover:border-brand-purple/60 hover:bg-neutral-800/90 text-sm font-medium text-white transition-all shadow-lg group"
+            className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#10110E] border border-[#10110E] hover:bg-[#2A2C26] text-sm font-medium text-[#F8F9F0] transition-all group"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#C7F04B] animate-pulse" />
             <span>Let&apos;s Connect</span>
-            <span className="text-neutral-400 group-hover:translate-x-1 transition-transform">→</span>
+            <span className="text-[#C7F04B] group-hover:translate-x-1 transition-transform">→</span>
           </a>
 
           {siteConfig.resumeUrl && (
@@ -185,14 +185,14 @@ export const HeroSection: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               onClick={playClickSound}
-              className="flex items-center gap-2 px-5 py-3 rounded-full glass-nav border border-white/10 hover:border-white/25 text-xs sm:text-sm font-mono text-neutral-300 hover:text-white transition-all"
+              className="flex items-center gap-2 px-5 py-3 rounded-full glass-nav border border-[#10110E]/10 hover:border-[#10110E]/25 text-xs sm:text-sm font-mono text-[#62655B] hover:text-[#10110E] transition-all"
             >
-              <FileText className="w-4 h-4 text-brand-yellow-warm" />
+              <FileText className="w-4 h-4 text-[#10110E]" />
               <span>View Resume</span>
             </a>
           )}
 
-          <div className="px-5 py-3 rounded-full glass-nav border border-white/10 text-xs sm:text-sm font-mono text-neutral-400">
+          <div className="px-5 py-3 rounded-full glass-nav border border-[#10110E]/10 text-xs sm:text-sm font-mono text-[#62655B]">
             <span>// Open to opportunities &amp; internships</span>
           </div>
         </motion.div>
@@ -200,14 +200,14 @@ export const HeroSection: React.FC = () => {
         {/* Scroll Prompt */}
         <motion.div
           variants={itemVariants}
-          className="mt-12 sm:mt-16 flex flex-col items-center gap-2 cursor-pointer text-neutral-500 hover:text-neutral-300 transition-colors"
+          className="mt-12 sm:mt-16 flex flex-col items-center gap-2 cursor-pointer text-[#62655B] hover:text-[#10110E] transition-colors"
           onClick={() => {
             playClickSound();
             document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           <span className="text-[11px] font-mono uppercase tracking-widest">Scroll to explore</span>
-          <ArrowDown className="w-4 h-4 animate-bounce text-brand-purple" />
+          <ArrowDown className="w-4 h-4 animate-bounce text-[#10110E]" />
         </motion.div>
       </motion.div>
     </section>
