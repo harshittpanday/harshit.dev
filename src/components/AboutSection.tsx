@@ -162,21 +162,38 @@ export const AboutSection: React.FC = () => {
                 <span>On Desk</span>
               </div>
 
+// ===================================================================================================================
+
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#10110E] tracking-tight">
-                Building Larptify
+                Finding Internship
               </h3>
               <p className="text-sm sm:text-base text-[#62655B] font-sans leading-relaxed mt-2 max-w-md">
-                Working with Thomas Hyslop on an internet-native music platform.
+                Looking for an internship where I can contribute and upskill myself.
               </p>
             </div>
-
             <div className="mt-8">
               <div className="flex items-center gap-2 text-xs font-mono text-[#30322C] uppercase">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#C7F04B] border border-[#10110E]/20" />
-                <span>Discussing About Idea</span>
+                <span>Open for Work</span>
               </div>
+              <p className="text-xs font-mono text-[#62655B] mt-1.5 ml-[18px]">
+
+              </p>
             </div>
           </motion.div>
+
+// =============================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
