@@ -175,9 +175,6 @@ export const AboutSection: React.FC = () => {
                 <span className="h-2.5 w-2.5 rounded-full bg-[#C7F04B] border border-[#10110E]/20" />
                 <span>Discussing About Idea</span>
               </div>
-              <p className="text-xs font-mono text-[#62655B] mt-1.5 ml-[18px]">
-                Updated recently
-              </p>
             </div>
           </motion.div>
 
