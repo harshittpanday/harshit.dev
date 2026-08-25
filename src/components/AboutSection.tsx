@@ -162,7 +162,7 @@ export const AboutSection: React.FC = () => {
                 <span>On Desk</span>
               </div>
 
-// ===================================================================================================================
+
 
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#10110E] tracking-tight">
                 Finding Internship
@@ -170,7 +170,6 @@ export const AboutSection: React.FC = () => {
               <p className="text-sm sm:text-base text-[#62655B] font-sans leading-relaxed mt-2 max-w-md">
                 Looking for an internship where I can contribute and upskill myself.
               </p>
-
             </div>
             <div className="mt-8">
               <div className="flex items-center gap-2 text-xs font-mono text-[#30322C] uppercase">
@@ -182,8 +181,6 @@ export const AboutSection: React.FC = () => {
               </p>
             </div>
           </motion.div>
-
-// =============================================================================================================================
 
 
 
