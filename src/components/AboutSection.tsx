@@ -9,6 +9,7 @@ import {
   Laptop,
 } from "lucide-react";
 import { playClickSound } from "@/lib/sound";
+import { ActivityPresence } from "@/components/ActivityPresence";
 
 export const AboutSection: React.FC = () => {
   const [currentTime, setCurrentTime] = useState<string>("");
@@ -145,6 +146,55 @@ export const AboutSection: React.FC = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="min-h-[230px] p-6 sm:p-8 rounded-3xl bg-[#ECEEDF] border border-[#10110E]/10 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#10110E] uppercase mb-6">
+                <span aria-hidden="true">&gt;_</span>
+                <span>On Desk</span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#10110E] tracking-tight">
+                Building Larptify
+              </h3>
+              <p className="text-sm sm:text-base text-[#62655B] font-sans leading-relaxed mt-2 max-w-md">
+                Working with Thomas Hyslop on an internet-native music platform.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#30322C] uppercase">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#C7F04B] border border-[#10110E]/20" />
+                <span>Discussing About Idea</span>
+              </div>
+              <p className="text-xs font-mono text-[#62655B] mt-1.5 ml-[18px]">
+                Updated recently
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="min-h-[230px] p-6 sm:p-8 rounded-3xl bg-[#F8F9F0] border border-[#10110E]/10 flex flex-col"
+          >
+            <div className="flex items-center gap-2 text-xs font-mono text-[#10110E] uppercase mb-6">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#C7F04B] border border-[#10110E]/20" />
+              <span>Activity</span>
+            </div>
+
+            <ActivityPresence />
+          </motion.div>
         </div>
       </div>
     </section>

@@ -2,3 +2,7 @@
 .next/
 .env.local
 .env
+.env.*.local
+presence-client/.env
+!.env.example
+!presence-client/.env.example
