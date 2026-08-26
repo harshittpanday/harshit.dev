@@ -165,16 +165,16 @@ export const AboutSection: React.FC = () => {
 
 
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#10110E] tracking-tight">
-                Finding Internship
+                On Vacation
               </h3>
               <p className="text-sm sm:text-base text-[#62655B] font-sans leading-relaxed mt-2 max-w-md">
-                Looking for an internship where I can contribute and upskill myself.
+                On leave for some time if you have any queries you can E-mail me I would read all after comeing
               </p>
             </div>
             <div className="mt-8">
               <div className="flex items-center gap-2 text-xs font-mono text-[#30322C] uppercase">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#C7F04B] border border-[#10110E]/20" />
-                <span>Open for Work</span>
+                <span>Till September 1st</span>
               </div>
               <p className="text-xs font-mono text-[#62655B] mt-1.5 ml-[18px]">
 
