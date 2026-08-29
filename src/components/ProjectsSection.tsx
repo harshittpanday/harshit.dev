@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { caseStudiesData, projectsData, CaseStudy, Project } from "@/data/portfolioData";
 import { ProjectModal } from "./ProjectModal";
 import { CaseStudyModal } from "./CaseStudyModal";
@@ -9,11 +9,13 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { playClickSound } from "@/lib/sound";
 
 export const ProjectsSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"projects" | "work">("projects");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
   const [studyModalOpen, setStudyModalOpen] = useState(false);
   const selectedProjects = projectsData.filter((project) => project.featured);
+  const isProjectsTab = activeTab === "projects";
 
   const openProject = (project: Project) => {
     playClickSound();
@@ -41,17 +43,64 @@ export const ProjectsSection: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-6xl font-display font-bold text-[#10110E] tracking-tight mb-3"
               >
-                SELECTED PROJECTS
+                {isProjectsTab ? "SELECTED PROJECTS" : "SELECTED WORK"}
               </motion.h2>
               <p className="text-sm sm:text-base text-[#62655B] font-sans">
-                Things I&apos;ve made, how they work, and what I used to build them.
+                {isProjectsTab
+                  ? "Things I've made, how they work, and what I used to build them."
+                  : "Client work and products I've shipped for others."}
               </p>
             </div>
 
+            <div
+              className="inline-flex items-center gap-1 p-1.5 rounded-full glass-nav mt-6"
+              role="tablist"
+              aria-label="Portfolio category"
+            >
+              {(["projects", "work"] as const).map((tab) => {
+                const isActive = activeTab === tab;
+
+                return (
+                  <button
+                    key={tab}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => {
+                      playClickSound();
+                      setActiveTab(tab);
+                    }}
+                    className={`relative px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
+                      isActive
+                        ? "text-[#10110E] font-semibold"
+                        : "text-[#62655B] hover:text-[#10110E]"
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeProjectsTab"
+                        className="absolute inset-0 rounded-full bg-[#10110E]/[0.06] border border-[#10110E]/10"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative z-10 capitalize">{tab}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Projects Rows */}
-          <div className="flex flex-col divide-y divide-[#10110E]/10">
+          <AnimatePresence mode="wait" initial={false}>
+            {isProjectsTab ? (
+              /* Projects Rows */
+              <motion.div
+                key="projects"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col divide-y divide-[#10110E]/10"
+              >
               {selectedProjects.map((project) => {
                 const study = caseStudiesData.find((item) => item.id === project.id);
                 return (
@@ -150,7 +199,68 @@ export const ProjectsSection: React.FC = () => {
                 </motion.div>
                 );
               })}
-          </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="work"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col divide-y divide-[#10110E]/10"
+              >
+                <div className="group py-8 sm:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-[#ECEEDF]/75 px-4 sm:px-6 rounded-2xl transition-all duration-300 relative">
+                  <div className="flex flex-col gap-1.5 md:max-w-xl">
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-[#10110E]">
+                        HelioSyncTech
+                      </h3>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-xs font-mono text-[#62655B]">
+                      <span>2026</span>
+                      <span>·</span>
+                      <span className="text-[#30322C]">Freelance / Client Work</span>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-[#62655B] font-sans mt-1">
+                      Designed and built a production website for HelioSyncTech, including frontend development, deployment, domain configuration, and DNS setup.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col md:items-end justify-between gap-3">
+                    <div className="text-xs font-mono font-medium text-[#10110E] bg-[#C7F04B] px-2.5 py-1 rounded-full">
+                      Web
+                    </div>
+
+                    <div className="flex flex-wrap gap-1.5 max-w-xs md:justify-end">
+                      {["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"].map(
+                        (tech) => (
+                          <span
+                            key={tech}
+                            className="px-2.5 py-1 rounded-md bg-[#ECEEDF] text-[11px] font-mono text-[#62655B] border border-[#10110E]/10"
+                          >
+                            {tech}
+                          </span>
+                        )
+                      )}
+                    </div>
+
+                    <a
+                      href="https://heliosynctech.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={playClickSound}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#10110E]/15 text-[11px] font-mono text-[#30322C] hover:text-[#10110E] hover:border-[#10110E]/35 transition-colors"
+                    >
+                      <span>View website</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 
