@@ -166,10 +166,10 @@ export const AboutSection: React.FC = () => {
 
 
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#10110E] tracking-tight">
-                Open To Work
+                Redis - In JAVA
               </h3>
               <p className="text-sm sm:text-base text-[#62655B] font-sans leading-relaxed mt-2 max-w-md">
-                Working on a Music app with Thomas Hyslop, as well as finding part time internships.
+                Building a Redis-inspired in-memory data store in Java to learn networking, persistence, concurrency, and database internals..
               </p>
             </div>
             <div className="mt-8">
