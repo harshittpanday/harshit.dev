@@ -81,7 +81,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 {project.category}
               </span>
               <span className="font-mono text-xs text-[#62655B]">
-                {project.role} · {project.year}
+                {project.role}{project.year ? ` · ${project.year}` : ""}
               </span>
             </div>
 

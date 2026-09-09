@@ -19,7 +19,7 @@ export interface CaseStudy {
 export interface Project {
   id: string;
   title: string;
-  category: "AI & Tools" | "Full-Stack" | "Social" | "Web";
+  category: "Desktop" | "AI & Tools" | "Research" | "Realtime" | "Web";
   year: string;
   role: string;
   description: string;
@@ -105,7 +105,7 @@ export const experienceSkillsData: SkillCategory[] = [
     color: "#22D3EE",
     description:
       "Programming languages I use across web applications, command-line tools, and AI projects.",
-    skills: ["Python", "TypeScript", "JavaScript", "HTML", "CSS", "SQL"],
+    skills: ["Python", "Rust", "TypeScript", "JavaScript", "HTML", "CSS", "SQL"],
   },
   {
     number: "02",
@@ -116,6 +116,7 @@ export const experienceSkillsData: SkillCategory[] = [
     skills: [
       "Next.js",
       "React",
+      "Tauri",
       "Tailwind CSS",
       "Framer Motion",
       "shadcn/ui",
@@ -157,6 +158,30 @@ export const experienceSkillsData: SkillCategory[] = [
 ];
 
 export const caseStudiesData: CaseStudy[] = [
+  {
+    id: "flint",
+    title: "Flint",
+    subtitle: "A cleaner way to launch and manage Minecraft",
+    role: "Creator / Builder",
+    year: "",
+    highlightTag: "Desktop launcher",
+    tags: ["Rust", "Tauri", "Minecraft", "Fabric"],
+    description:
+      "Flint brings launching, profiles, mods, and settings into a focused desktop experience built specifically for Minecraft.",
+    overview:
+      "Flint is an actively developed Minecraft launcher built with Rust and Tauri. It handles authentication, Java discovery, profiles, mods, presets, and the launch lifecycle for Vanilla and Fabric installations.",
+    features: [
+      "Microsoft and Minecraft authentication workflow",
+      "Vanilla and Fabric version launching",
+      "Java discovery with version, architecture, and duplicate-home checks",
+      "Profile, mod, preset, and launcher settings management",
+      "Shared Windows child-process behavior with hidden release consoles",
+      "Launch progress, accessible controls, and reduced-motion support",
+    ],
+    stack: ["Rust", "Tauri", "Minecraft", "Fabric", "Java"],
+    githubUrl: "https://github.com/harshittpanday/Flint",
+    accentColor: "#C7F04B",
+  },
   {
     id: "codey",
     title: "CodeY",
@@ -221,37 +246,54 @@ export const caseStudiesData: CaseStudy[] = [
     accentColor: "#A78BFA",
   },
   {
-    id: "threadly",
-    title: "ThreadLy",
-    subtitle: "A web app for posts and discussions",
+    id: "relay",
+    title: "Relay",
+    subtitle: "Realtime messaging across desktop and mobile",
     role: "Creator / Builder",
-    year: "2026",
-    highlightTag: "Threads, replies, and media",
-    tags: ["Next.js", "TypeScript", "Clerk", "Firebase", "Cloudinary", "Tailwind CSS"],
+    year: "",
+    highlightTag: "Realtime chat",
+    tags: ["TypeScript", "React", "Firebase", "PWA"],
     description:
-      "ThreadLy is a social web app for creating posts, joining discussions, sharing media, and replying in threads.",
+      "Relay is a realtime chat application focused on responsive messaging, clear profiles, and a stronger everyday experience than its earlier iteration.",
     overview:
-      "ThreadLy combines discussion threads, replies, media uploads, and user profiles. Clerk handles authentication, Firebase stores post data, and Cloudinary handles images.",
+      "Relay uses React, TypeScript, and Firebase to provide authenticated realtime messaging across desktop and mobile. Its frontend is organized around typed Firebase services, reusable hooks, predictable listener cleanup, and safe React rendering.",
     features: [
-      "User authentication and profile management via Clerk",
-      "Real-time database integration with Firebase",
-      "Cloud image storage and optimization with Cloudinary",
-      "Responsive post feeds and nested replies",
+      "Firebase Authentication and realtime messaging",
+      "Typed Firebase services and immutable data interfaces",
+      "Reusable hooks and reliable listener cleanup",
+      "Profile, notification, and toast interfaces",
+      "Responsive desktop and mobile layouts",
+      "Progressive Web App setup and Firebase database rules",
     ],
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Clerk",
-      "Firebase",
-      "Cloudinary",
-      "Tailwind CSS",
-    ],
-    githubUrl: "https://github.com/harshittpanday/threadly",
+    stack: ["TypeScript", "React", "Firebase", "PWA"],
+    githubUrl: "https://github.com/harshittpanday/Relay",
     accentColor: "#FEF08A",
   },
 ];
 
 export const projectsData: Project[] = [
+  {
+    id: "flint",
+    title: "Flint",
+    category: "Desktop",
+    year: "",
+    role: "Creator / Builder",
+    description:
+      "A modern Minecraft launcher built around fast setup, profiles, mods, and a cleaner way to get into the game.",
+    longDescription:
+      "Flint is an actively developed desktop launcher built with Rust and Tauri. It manages Microsoft authentication, Java discovery, profiles, mods, and launching both Vanilla and Fabric Minecraft.",
+    highlights: [
+      "Microsoft and Minecraft authentication workflow",
+      "Vanilla and Fabric Minecraft launching",
+      "Java discovery with version, architecture, and duplicate-home checks",
+      "Profiles, mods, settings, presets, and launch progress",
+      "Accessible controls and reduced-motion support",
+    ],
+    stack: ["Rust", "Tauri", "Minecraft", "Fabric"],
+    githubUrl: "https://github.com/harshittpanday/Flint",
+    featured: true,
+    accentColor: "#C7F04B",
+  },
   {
     id: "codey",
     title: "CodeY",
@@ -259,16 +301,16 @@ export const projectsData: Project[] = [
     year: "2026",
     role: "Creator / Builder",
     description:
-      "A local tool for understanding unfamiliar codebases. It indexes code structure and Git history, then retrieves context for questions.",
+      "Local-first project memory that indexes code, structure, and Git history so returning to a project never means starting from zero.",
     longDescription:
-      "CodeY stores repository embeddings in ChromaDB and metadata in SQLite. It tracks files and Git history locally so developers can ask about code flow, dependencies, and past changes.",
+      "CodeY stores project context locally and provides a CLI for indexing files, code structure, symbols, and Git history. Ollama support lets developers ask about a codebase without sending it to a hosted model.",
     highlights: [
-      "Local offline LLM integration via Ollama",
-      "ChromaDB semantic search over repository files",
-      "Real-time file change monitoring via Watchdog",
-      "Terminal user interface formatted with Rich and Typer",
+      "Local-first indexing for files, structure, and symbols",
+      "Git history and commit indexing",
+      "CLI workflows for indexing and inspecting project context",
+      "Local AI support through Ollama",
     ],
-    stack: ["Python", "SQLite", "Ollama", "GitPython", "ChromaDB", "Typer"],
+    stack: ["Python", "SQLite", "Ollama", "Git", "Typer", "Rich"],
     githubUrl: "https://github.com/harshittpanday/codey",
     featured: true,
     accentColor: "#A78BFA",
@@ -276,18 +318,18 @@ export const projectsData: Project[] = [
   {
     id: "intent",
     title: "Intent",
-    category: "AI & Tools",
+    category: "Research",
     year: "2026",
     role: "Creator / Builder",
     description:
-      "A research tool that gathers material from Reddit, X, YouTube, documentation, and the web in one place.",
+      "AI-assisted research across multiple sources, turning scattered results into useful summaries, source previews, and saved collections.",
     longDescription:
-      "Intent collects discussions, video transcripts, and documentation around a question, then uses AI to summarize the relevant material.",
+      "Intent brings material from sources such as Reddit, X, YouTube, and documentation into one research workflow, with AI summaries, source previews, and saved collections.",
     highlights: [
-      "Multi-source information aggregation pipeline",
-      "AI summaries and key-point extraction",
-      "PostgreSQL and Neon database storage",
-      "Responsive UI built with Next.js and Tailwind CSS",
+      "Multi-source research and discovery",
+      "AI-assisted summaries and source previews",
+      "Saved research collections",
+      "Responsive product interface",
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Neon"],
     githubUrl: "https://github.com/harshittpanday/intent",
@@ -295,83 +337,43 @@ export const projectsData: Project[] = [
     accentColor: "#A78BFA",
   },
   {
-    id: "threadly",
-    title: "ThreadLy",
-    category: "Social",
-    year: "2026",
+    id: "relay",
+    title: "Relay",
+    category: "Realtime",
+    year: "",
     role: "Creator / Builder",
     description:
-      "A social web app for posts, threaded discussions, media sharing, and user profiles.",
+      "Realtime chat shaped around Firebase-backed messaging, profiles, and a clean experience across desktop and mobile.",
     longDescription:
-      "ThreadLy uses Clerk for authentication, Firebase for post data, and Cloudinary for image uploads. Posts support threaded replies and live updates.",
+      "Relay is a TypeScript and React chat application with Firebase-backed authentication and realtime messaging, reusable typed services, profiles, notifications, and responsive layouts.",
     highlights: [
-      "Clerk user authentication and profile management",
-      "Firebase database synchronization for posts",
-      "Cloudinary media upload integration",
-      "Clean dark-mode interface with Tailwind CSS",
+      "Realtime Firebase messaging and authentication",
+      "Typed services, reusable hooks, and listener cleanup",
+      "Profile and notification interfaces",
+      "Responsive desktop and mobile layouts with PWA support",
     ],
-    stack: ["Next.js", "TypeScript", "Clerk", "Firebase", "Cloudinary"],
-    githubUrl: "https://github.com/harshittpanday/threadly",
+    stack: ["TypeScript", "React", "Firebase", "PWA"],
+    githubUrl: "https://github.com/harshittpanday/Relay",
     featured: true,
     accentColor: "#FEF08A",
   },
   {
-    id: "personal-ai",
-    title: "Personal AI",
-    category: "AI & Tools",
-    year: "2025",
-    role: "Creator / Builder",
-    description:
-      "An experiment with a local assistant that remembers context and answers questions about indexed documents.",
-    longDescription:
-      "This project tests semantic memory, document retrieval, and custom prompt routing with a local model.",
-    highlights: [
-      "Semantic indexing over notes and documents",
-      "Conversational memory with local storage",
-      "Modular Python and LangChain pipeline",
-    ],
-    stack: ["Python", "LangChain", "ChromaDB", "Ollama", "SQLite"],
-    githubUrl: "https://github.com/harshittpanday/personal-ai",
-    featured: false,
-    accentColor: "#A78BFA",
-  },
-  {
-    id: "study-system",
-    title: "Study System",
-    category: "Full-Stack",
-    year: "2025",
-    role: "Creator / Builder",
-    description:
-      "A workspace for organizing study material, concepts, sessions, and revision schedules.",
-    longDescription:
-      "Study System groups notes by subject and topic, tracks study sessions, and keeps revision plans in one place.",
-    highlights: [
-      "Subject taxonomy and hierarchical topic breakdown",
-      "Clean, distraction-free markdown interface",
-      "PostgreSQL and Prisma data layer",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Prisma", "Tailwind CSS"],
-    githubUrl: "https://github.com/harshittpanday",
-    featured: false,
-    accentColor: "#FEF08A",
-  },
-  {
     id: "heliosynctech",
-    title: "HelioSyncTech Web",
+    title: "HelioSyncTech",
     category: "Web",
-    year: "2025",
-    role: "Web Developer",
+    year: "2026",
+    role: "Freelance / Client Work",
     description:
-      "A responsive client website with custom layouts, interactive sections, and motion.",
+      "Production website designed, built, and deployed for a real client, with a responsive interface and polished interactions.",
     longDescription:
-      "A client website built with Next.js and Tailwind CSS, with responsive layouts and Framer Motion interactions.",
+      "Designed and built a production website for HelioSyncTech, including frontend development, deployment, domain configuration, and DNS setup.",
     highlights: [
-      "Responsive mobile-to-desktop layouts",
-      "Optimized image assets",
-      "Interactive components with Framer Motion",
+      "Responsive production interface",
+      "Polished interactions with Framer Motion",
+      "Deployment, domain configuration, and DNS setup",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/harshittpanday",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    liveUrl: "https://heliosynctech.com",
     featured: false,
     accentColor: "#22D3EE",
   },
@@ -382,6 +384,7 @@ export const techStackCategories = [
     category: "Languages",
     items: [
       { name: "Python", icon: "Terminal", color: "#22D3EE" },
+      { name: "Rust", icon: "Code2", color: "#22D3EE" },
       { name: "TypeScript", icon: "Code2", color: "#22D3EE" },
       { name: "JavaScript", icon: "FileCode", color: "#22D3EE" },
       { name: "HTML", icon: "Layout", color: "#22D3EE" },
@@ -393,6 +396,7 @@ export const techStackCategories = [
     items: [
       { name: "Next.js", icon: "Boxes", color: "#22D3EE" },
       { name: "React", icon: "Atom", color: "#22D3EE" },
+      { name: "Tauri", icon: "Boxes", color: "#22D3EE" },
       { name: "Tailwind CSS", icon: "Palette", color: "#22D3EE" },
       { name: "Framer Motion", icon: "Sparkles", color: "#22D3EE" },
       { name: "shadcn/ui", icon: "Layers", color: "#22D3EE" },

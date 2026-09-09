@@ -166,11 +166,10 @@ export const AboutSection: React.FC = () => {
 
 
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#10110E] tracking-tight">
-                Minecraft Launcer
+                Flint
               </h3>
               <p className="text-sm sm:text-base text-[#62655B] font-sans leading-relaxed mt-2 max-w-md">
-                Building a MC launcher that helps offline players to join without /login or /register commands.
-                Join https://discord.gg/atWfHfwjYy for more info.
+                Building a modern Minecraft launcher around profiles, mods, fast setup, and a cleaner launch flow.
               </p>
             </div>
             <div className="mt-8">

@@ -80,9 +80,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               >
                 {study.role}
               </span>
-              <span className="font-mono text-xs text-[#62655B]">
-                // {study.year}
-              </span>
+              {study.year && (
+                <span className="font-mono text-xs text-[#62655B]">
+                  // {study.year}
+                </span>
+              )}
             </div>
 
             {/* Main Title & Subtitle */}
